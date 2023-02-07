@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FindoctorEntity/1.0.0": {
+        "dependencies": {
+          "FindoctorCore": "1.0.0"
+        },
+        "runtime": {
+          "FindoctorEntity.dll": {}
+        }
+      },
+      "FindoctorCore/1.0.0": {
+        "runtime": {
+          "FindoctorCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FindoctorEntity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FindoctorCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

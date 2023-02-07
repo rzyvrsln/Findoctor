@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "DosctorRegister";
+}
+
+<main>
+	<div id="hero_register">
+		<div class="container margin_120_95">
+			<div class="row">
+				<div class="col-lg-6 mt-lg-5">
+					<div class="box_feat_2">
+						<i class="pe-7s-culture"></i>
+						<h3>Həkim kimi qeydiyyatdan keçə bilərsiniz</h3>
+						<p>Ali tibb təhsili olan, bu sahədə əldə etdiyi bilik və bacarıqlarını insanların xəstəliklərinin müalicəsinə, insan sağlamlığının qorunması və saxlanılmasına həsr edən insan.</p>
+					</div>
+					<div class="box_feat_2">
+						<i class="pe-7s-portfolio"></i>
+						<h3>İstifadəçilərlə əlaqə qura biləcəksiniz</h3>
+						<p>Siz həkim kimi bu sayt üzərindən xəstə qəbul edə biləcəksiniz.</p>
+					</div>
+					
+				</div>
+				<!-- /col -->
+				<div class="col-lg-6 ml-auto">
+					<div class="box_form">
+						
+						<form method="post">
+							<div class="row">
+								<div class="col-md-6 ">
+									<div class="form-group">
+										<input class="form-control" placeholder="Ad">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" placeholder="Soyad">
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" placeholder="Yaşadığınız şəhər">
+									</div>
+								</div>
+								<div class="col-md-6">
+									
+									<div class="form-group">
+										<select class="form-control">
+											<option disabled selected>Ölkə seçin</option>
+											
+										</select>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" placeholder="Telefon nömrəsi">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<select class="form-control">
+											<option disabled selected>İxtisas seçin</option>
+											
+										</select>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<input class="form-control" placeholder="Email adres">
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" id="password1" placeholder="Şifrə">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" id="password2" placeholder="Şifrəni təsdiqləyin">
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="form-group text-center add_top_30">
+							<a asp-controller="Account" asp-action="DoctorRegister"><input readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
+							</div>
+							<p class="text-center"><small>gggggggg</small></p>
+						</form>
+					</div>
+					<!-- /box_form -->
+				</div>
+				<!-- /col -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /hero_register -->
+</main>

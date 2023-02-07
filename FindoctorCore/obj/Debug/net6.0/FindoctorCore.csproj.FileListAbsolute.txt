@@ -1,0 +1,12 @@
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\bin\Debug\net6.0\FindoctorCore.deps.json
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\bin\Debug\net6.0\FindoctorCore.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\bin\Debug\net6.0\FindoctorCore.pdb
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.csproj.AssemblyReference.cache
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.AssemblyInfoInputs.cache
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.AssemblyInfo.cs
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.csproj.CoreCompileInputs.cache
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\refint\FindoctorCore.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\FindoctorCore.pdb
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorCore\obj\Debug\net6.0\ref\FindoctorCore.dll

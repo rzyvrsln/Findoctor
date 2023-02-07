@@ -1,0 +1,330 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\FindoctorWeb.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\FindoctorCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\FindoctorCore.csproj",
+        "projectName": "FindoctorCore",
+        "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\FindoctorCore.csproj",
+        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj",
+        "projectName": "FindoctorData",
+        "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj",
+        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj",
+        "projectName": "FindoctorEntity",
+        "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj",
+        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\FindoctorCore.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorCore\\FindoctorCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\FindoctorService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\FindoctorService.csproj",
+        "projectName": "FindoctorService",
+        "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\FindoctorService.csproj",
+        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj"
+              },
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\FindoctorWeb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\FindoctorWeb.csproj",
+        "projectName": "FindoctorWeb",
+        "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\FindoctorWeb.csproj",
+        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorData\\FindoctorData.csproj"
+              },
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\FindoctorService.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorService\\FindoctorService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FindoctorCore/1.0.0": {
+        "runtime": {
+          "FindoctorCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FindoctorCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
