@@ -30,10 +30,10 @@ namespace FindoctorData.Repositories
 
 
 
-        //public async Task AddAsync(T entity)
-        //{
-        //    await Table.AddAsync(entity);
-        //}
+        public async Task AddAsync(T entity)
+        {
+            await Table.AddAsync(entity);
+        }
 
         //public async Task<T> GetAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
         //{
@@ -47,10 +47,10 @@ namespace FindoctorData.Repositories
         //    return await query.SingleAsync();
         //}
 
-        //public async Task<T> GetByGuidAsync(Guid id)
-        //{
-        //    return await Table.FindAsync(id);
-        //}
+        public async Task<T> GetByGuidAsync(Guid id)
+        {
+            return await Table.FindAsync(id);
+        }
 
         //public async Task<T> UpdateAsync(T entity)
         //{
@@ -58,10 +58,10 @@ namespace FindoctorData.Repositories
         //    return entity;
         //}
 
-        //public async Task DeleteAsync(T entity)
-        //{
-        //    await Task.Run(() => Table.Remove(entity));
-        //}
+        public async Task DeleteAsync(T entity)
+        {
+            await Task.Run(() => Table.Remove(entity));
+        }
 
         //public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
         //{

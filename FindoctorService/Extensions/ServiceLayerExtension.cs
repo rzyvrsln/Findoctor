@@ -1,10 +1,9 @@
 ﻿using FindoctorService.Services;
+using FindoctorService.Validations;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace FindoctorService.Extensions
 {
@@ -13,6 +12,14 @@ namespace FindoctorService.Extensions
         public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)
         {
             services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddControllersWithViews().AddFluentValidation(opt =>
+            {
+                opt.RegisterValidatorsFromAssemblyContaining<CategoryValidation>();
+                opt.DisableDataAnnotationsValidation = true;
+                opt.ValidatorOptions.LanguageManager.Culture = new CultureInfo("az");
+            });
+
             return services;
         }
     }

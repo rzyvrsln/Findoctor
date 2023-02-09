@@ -1,4 +1,5 @@
 ﻿using FindoctorCore.Entities;
+using FindoctorEntity.Entities.ManyToMany;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace FindoctorEntity.Entities
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public Guid DoctorId { get; set; }
-        public Doctor Doctor { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
+        public ICollection<DoctorPatient> DoctorPatients { get; set; }
     }
 }

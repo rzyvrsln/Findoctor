@@ -1,9 +1,5 @@
 ﻿using FindoctorCore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FindoctorEntity.Entities.ManyToMany;
 
 namespace FindoctorEntity.Entities
 {
@@ -11,7 +7,16 @@ namespace FindoctorEntity.Entities
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
-        public ICollection<Patient> Patients { get; set; }
+        public string Gender { get; set; }
+
+        public Guid ClinicId { get; set; }
+        public Clinic Clinic { get; set; }
+
+        public Guid SpecialityId { get; set; }
+        public Specialty Specialty { get; set; }
+
+        public ICollection<DoctorPatient>? DoctorPatients { get; set; }
     }
 }

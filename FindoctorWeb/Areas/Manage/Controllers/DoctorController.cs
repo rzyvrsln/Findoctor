@@ -16,5 +16,8 @@ namespace FindoctorWeb.Areas.Manage.Controllers
             var doctors = await doctorService.GetDoctorAsync();
             return View(doctors);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Create() => View();
     }
 }

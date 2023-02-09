@@ -17,6 +17,11 @@ namespace FindoctorData.UnitOfWorks
             return new Repository<T>(dbContext);
         }
 
+        public async Task SaveChangeAsync()
+        {
+            await dbContext.SaveChangesAsync();
+        }
+
         //public async ValueTask DisposeAsync()
         //{
         //    await dbContext.DisposeAsync();
