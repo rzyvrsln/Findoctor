@@ -43,7 +43,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
@@ -75,7 +75,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clinic");
+                    b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
@@ -112,9 +112,6 @@ namespace FindoctorData.Migrations
                     b.Property<Guid>("SpecialityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("SpecialtyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -126,7 +123,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("ClinicId");
 
-                    b.HasIndex("SpecialtyId");
+                    b.HasIndex("SpecialityId");
 
                     b.ToTable("Doctors");
                 });
@@ -185,7 +182,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Patient");
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Specialty", b =>
@@ -214,7 +211,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Specialty");
+                    b.ToTable("Specialties");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
@@ -225,15 +222,15 @@ namespace FindoctorData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FindoctorEntity.Entities.Specialty", "Specialty")
+                    b.HasOne("FindoctorEntity.Entities.Specialty", "Speciality")
                         .WithMany("Doctors")
-                        .HasForeignKey("SpecialtyId")
+                        .HasForeignKey("SpecialityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Clinic");
 
-                    b.Navigation("Specialty");
+                    b.Navigation("Speciality");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.ManyToMany.DoctorPatient", b =>

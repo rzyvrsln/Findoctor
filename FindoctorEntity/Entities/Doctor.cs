@@ -15,7 +15,7 @@ namespace FindoctorEntity.Entities
         public Clinic Clinic { get; set; }
 
         public Guid SpecialityId { get; set; }
-        public Specialty Specialty { get; set; }
+        public Specialty Speciality { get; set; }
 
         public ICollection<DoctorPatient>? DoctorPatients { get; set; }
     }
