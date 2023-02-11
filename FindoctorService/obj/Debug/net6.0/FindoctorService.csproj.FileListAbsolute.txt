@@ -17,3 +17,5 @@ C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\bin\Debug\net6.0\FindoctorDat
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\bin\Debug\net6.0\FindoctorEntity.pdb
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\bin\Debug\net6.0\FindoctorCore.pdb
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\obj\Debug\net6.0\FindoctorService.csproj.CopyComplete
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\bin\Debug\net6.0\FindoctorViewModel.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorService\bin\Debug\net6.0\FindoctorViewModel.pdb

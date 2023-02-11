@@ -5,13 +5,15 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindoctorWeb", "FindoctorWeb\FindoctorWeb.csproj", "{A6416CB0-48CE-4254-9C11-C84AE92AF5D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindoctorCore", "FindoctorCore\FindoctorCore.csproj", "{7FB22748-514C-4DB0-B56B-D7395025EC7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindoctorCore", "FindoctorCore\FindoctorCore.csproj", "{7FB22748-514C-4DB0-B56B-D7395025EC7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindoctorData", "FindoctorData\FindoctorData.csproj", "{645D0DAF-219E-46E7-BA05-38689ACCD7E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindoctorData", "FindoctorData\FindoctorData.csproj", "{645D0DAF-219E-46E7-BA05-38689ACCD7E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindoctorEntity", "FindoctorEntity\FindoctorEntity.csproj", "{1BEEA129-DD96-46D9-8057-A40639940DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindoctorEntity", "FindoctorEntity\FindoctorEntity.csproj", "{1BEEA129-DD96-46D9-8057-A40639940DF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindoctorService", "FindoctorService\FindoctorService.csproj", "{6260F620-F99A-4F5F-82F1-A06A4D58D4DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindoctorService", "FindoctorService\FindoctorService.csproj", "{6260F620-F99A-4F5F-82F1-A06A4D58D4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindoctorViewModel", "FindoctorViewModel\FindoctorViewModel.csproj", "{F9E96221-F564-4CD3-8AEA-07EFEF0F2293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6260F620-F99A-4F5F-82F1-A06A4D58D4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6260F620-F99A-4F5F-82F1-A06A4D58D4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6260F620-F99A-4F5F-82F1-A06A4D58D4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E96221-F564-4CD3-8AEA-07EFEF0F2293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E96221-F564-4CD3-8AEA-07EFEF0F2293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E96221-F564-4CD3-8AEA-07EFEF0F2293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E96221-F564-4CD3-8AEA-07EFEF0F2293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

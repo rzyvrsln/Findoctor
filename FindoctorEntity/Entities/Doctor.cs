@@ -10,12 +10,10 @@ namespace FindoctorEntity.Entities
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
+        public string ImageUrl { get; set; }
 
         public Guid ClinicId { get; set; }
         public Clinic Clinic { get; set; }
-
-        public Guid SpecialityId { get; set; }
-        public Specialty Speciality { get; set; }
 
         public ICollection<DoctorPatient>? DoctorPatients { get; set; }
     }

@@ -1,73 +1,53 @@
 ﻿@using FindoctorEntity.Entities
-
 @{
     ViewData["Title"] = "Index";
 }
 
 @model ICollection<Category>
 
-<div class="wrapper">
-    <div class="content-wrapper" style="padding-top:20px">
-        <section class="content ">
-            <div class="card container">
-                <div class="card-header">
-                    <h3 class="card-title">HəKateqoriyalarər</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        @*<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                        </button>*@
-                    </div>
-                </div>
-                <div class="card-body p-0">
-                    <table class="table table-striped projects">
-                        <thead>
-                            <tr>
-                                <th style="width: 1%">
-                                    #
-                                </th>
-                                <th style="width: 10%">
-                                    Kateqoriya
-                                </th>
-
-                                <th>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{
-                                int count = 0;
-                            }
-
-                            @foreach (var category in Model)
-                            {
-                                count++;
-
-                                <tr>
-                                    <td>@count</td>
-                                    <td>@category.Name</td>
-                                    <td class="project-actions text-right">
-                                        <a class="btn btn-info btn-sm" asp-controller="Category" asp-action="Update" asp-route-id="@category.Id">
-                                            <i class="fas fa-pencil-alt"></i>
-                                            Edit
-                                        </a>
-                                        <a class="btn btn-info btn-sm" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id">
-                                            @*<i class="fas fa-remove-alt"></i>*@
-                                            Delete
-                                        </a>
-                                    </td>
-
-                                </tr>
-
-                            }
-
-                        </tbody>
-                    </table>
-                </div>
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="İndex">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Kateqoriyalar</li>
+        </ol>
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2><i class="fa fa-file"></i>Kateqoriyalar</h2>
             </div>
-        </section>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Kateqoriya</th>
+                        <th scope="col">Şəkil</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@category.Name</td>
+                            <td><img style="width:100px;" src="~/assets/img/category/@category.ImageUrl" /></td>
+                            <td>
+                                <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger">Sil</a>
+                                <a asp-controller="Category" asp-action="Update" asp-route-id="@category.Id" class="btn btn-danger">Redaktə et</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <!-- /row-->
+        </div>
+        <!-- /box_general-->
+        <!-- /box_general-->
     </div>
+    <!-- /.container-fluid-->
 </div>

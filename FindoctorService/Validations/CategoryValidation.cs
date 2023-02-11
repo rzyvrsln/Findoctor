@@ -8,6 +8,7 @@ namespace FindoctorService.Validations
         public CategoryValidation()
         {
             RuleFor(x => x.Name).NotEmpty().MinimumLength(3).MaximumLength(14).WithName("Kateqoriya");
+            RuleFor(x => x.ImageUrl).NotEmpty().WithName("Şəkil");
         }
     }
 }
