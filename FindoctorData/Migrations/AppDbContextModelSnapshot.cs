@@ -24,12 +24,18 @@ namespace FindoctorData.Migrations
 
             modelBuilder.Entity("FindoctorEntity.Entities.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -48,9 +54,14 @@ namespace FindoctorData.Migrations
 
             modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -70,22 +81,35 @@ namespace FindoctorData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("StartWorkTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StoptWorkTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ClinicId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClinicId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -95,6 +119,10 @@ namespace FindoctorData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -109,8 +137,11 @@ namespace FindoctorData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("SpecialityId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("StartWorkTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StopWorkTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -121,24 +152,26 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClinicId");
+                    b.HasIndex("CategoryId");
 
-                    b.HasIndex("SpecialityId");
+                    b.HasIndex("ClinicId");
 
                     b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.ManyToMany.DoctorPatient", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("DoctorId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<Guid>("PatientId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -151,9 +184,11 @@ namespace FindoctorData.Migrations
 
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -185,52 +220,34 @@ namespace FindoctorData.Migrations
                     b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("FindoctorEntity.Entities.Specialty", b =>
+            modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.HasOne("FindoctorEntity.Entities.Category", "Category")
+                        .WithMany("Clinics")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Specialties");
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
                 {
+                    b.HasOne("FindoctorEntity.Entities.Category", "Category")
+                        .WithMany("Doctors")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("FindoctorEntity.Entities.Clinic", "Clinic")
                         .WithMany("Doctors")
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FindoctorEntity.Entities.Specialty", "Speciality")
-                        .WithMany("Doctors")
-                        .HasForeignKey("SpecialityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Category");
 
                     b.Navigation("Clinic");
-
-                    b.Navigation("Speciality");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.ManyToMany.DoctorPatient", b =>
@@ -238,13 +255,13 @@ namespace FindoctorData.Migrations
                     b.HasOne("FindoctorEntity.Entities.Doctor", "Doctor")
                         .WithMany("DoctorPatients")
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FindoctorEntity.Entities.Patient", "Patient")
                         .WithMany("DoctorPatients")
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Doctor");
@@ -252,20 +269,11 @@ namespace FindoctorData.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("FindoctorEntity.Entities.Specialty", b =>
-                {
-                    b.HasOne("FindoctorEntity.Entities.Category", "Category")
-                        .WithMany("Specialties")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("FindoctorEntity.Entities.Category", b =>
                 {
-                    b.Navigation("Specialties");
+                    b.Navigation("Clinics");
+
+                    b.Navigation("Doctors");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
@@ -281,11 +289,6 @@ namespace FindoctorData.Migrations
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>
                 {
                     b.Navigation("DoctorPatients");
-                });
-
-            modelBuilder.Entity("FindoctorEntity.Entities.Specialty", b =>
-                {
-                    b.Navigation("Doctors");
                 });
 #pragma warning restore 612, 618
         }

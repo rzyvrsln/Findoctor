@@ -47,7 +47,7 @@ namespace FindoctorData.Repositories
         //    return await query.SingleAsync();
         //}
 
-        public async Task<T> GetByGuidAsync(Guid id)
+        public async Task<T> GetByIdAsync(int? id)
         {
             return await Table.FindAsync(id);
         }
