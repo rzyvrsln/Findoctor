@@ -1,11 +1,6 @@
 ﻿using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.ClinicVm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindoctorService.Services
 {
@@ -35,7 +30,7 @@ namespace FindoctorService.Services
 
         public async Task<ICollection<Clinic>> GetAllClinicAsync()
         {
-            await unitOfWork.GetRepository<Clinic>().AnyAsync(x=>x.Category);
+            await unitOfWork.GetRepository<Category>().GetAllAsync();
             return await unitOfWork.GetRepository<Clinic>().GetAllAsync();
         }
     }

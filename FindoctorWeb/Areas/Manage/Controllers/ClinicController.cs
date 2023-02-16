@@ -1,6 +1,9 @@
-﻿using FindoctorService.Services;
+﻿using FindoctorData.DAL;
+using FindoctorEntity.Entities;
+using FindoctorService.Services;
 using FindoctorViewModel.Entities.ClinicVm;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FindoctorWeb.Areas.Manage.Controllers
 {
@@ -8,24 +11,29 @@ namespace FindoctorWeb.Areas.Manage.Controllers
     public class ClinicController : Controller
     {
         private readonly IClinicService clinicService;
+        private readonly AppDbContext dbContext;
 
-        public ClinicController(IClinicService clinicService)
+        public ClinicController(IClinicService clinicService, AppDbContext dbContext)
         {
             this.clinicService = clinicService;
+            this.dbContext = dbContext;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             var clinics = await clinicService.GetAllClinicAsync();
-            ViewBag.Categories = clinics.ToList();
             return View(clinics);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create() => View();
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
+            return View();
+        }
 
-        [HttpPost]
+            [HttpPost]
         public async Task<IActionResult> Create(CreateClinicVM clinicVM)
         {
             await clinicService.AddClinicAsync(clinicVM);

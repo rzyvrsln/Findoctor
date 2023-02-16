@@ -38,7 +38,14 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>@clinics.Name</td>
-                            <td>@clinics.Description.Substring(0,20) ...</td>
+                            @if(clinics.Description.Length > 20)
+                            {
+                                <td>@clinics.Description.Substring(0,20) ...</td>
+                            }
+                            else
+                            {
+                                <td>@clinics.Description</td>
+                            }
                             <td>@clinics.Location</td>
                             <td>@clinics.Category.Name</td>
                             <td>@clinics.StartWorkTime.Hour - @clinics.StoptWorkTime.Hour</td>
