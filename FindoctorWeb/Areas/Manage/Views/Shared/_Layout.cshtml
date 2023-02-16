@@ -66,6 +66,21 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Klinika</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseProfile">
+                        <li>
+                            <a asp-controller="Clinic" asp-action="Index">Klinikalar</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Clinic" asp-action="Create">Klinika əlavə et</a>
+                        </li>
+                    </ul>
+                </li>
+@*
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Kateqoriya</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseProfile">
@@ -76,7 +91,7 @@
                             <a asp-controller="Category" asp-action="Create">Kateqoriya yarat</a>
                         </li>
                     </ul>
-                </li>
+                </li>*@
                 
             </ul>
             <ul class="navbar-nav sidenav-toggler">

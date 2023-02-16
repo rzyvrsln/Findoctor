@@ -1,6 +1,10 @@
-﻿using FindoctorService.Services;
+﻿using FindoctorEntity.Entities;
+using FindoctorService.Extensions;
+using FindoctorService.Services;
 using FindoctorViewModel.Entities.CategoryVM;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace FindoctorWeb.Areas.Manage.Controllers
 {
@@ -9,7 +13,10 @@ namespace FindoctorWeb.Areas.Manage.Controllers
     {
         private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryService categoryService) => _categoryService = categoryService;
+        public CategoryController(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -43,9 +50,9 @@ namespace FindoctorWeb.Areas.Manage.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(UpdateCategoryVM categoryVM)
+        public async Task<IActionResult> Update(int? id, UpdateCategoryVM categoryVM)
         {
-            await _categoryService.UpdateCategoryPostAsync(categoryVM);
+            await _categoryService.UpdateCategoryPostAsync(id, categoryVM);
             return RedirectToAction(nameof(Index), "Category");
         }
     }

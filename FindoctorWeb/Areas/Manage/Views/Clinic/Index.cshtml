@@ -1,0 +1,56 @@
+﻿@using FindoctorEntity.Entities
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model ICollection<Clinic>
+
+<div class="content-wrapper container">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">İdarə paneli</a>
+            </li>
+            <li class="breadcrumb-item active"><a asp-controller="Clinic" asp-action="Create" >Klinika yarat</a></li>
+        </ol>
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2><i class="fa fa-file"></i>Klinikalar</h2>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Klinika</th>
+                        <th>Haqqında</th>
+                        <th>Ünvan</th>
+                        <th>Kateqoriya</th>
+                        <th>İş saatı</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var clinics in Model)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@clinics.Name</td>
+                            <td>@clinics.Description.Substring(0,20) ...</td>
+                            <td>@clinics.Location</td>
+                            <td>@clinics.Category.Name</td>
+                            <td>@clinics.StartWorkTime.Hour - @clinics.StoptWorkTime.Hour</td>
+                            <td>
+                                <a asp-controller="Category" asp-action="Delete" asp-route-id="@clinics.Id" class="btn btn-danger">Sil</a>
+                                <a asp-controller="Category" asp-action="Update" asp-route-id="@clinics.Id" class="btn btn-warning">Redaktə et</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>

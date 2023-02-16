@@ -3,11 +3,6 @@ using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.CategoryVM;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindoctorService.Services
 {
@@ -24,7 +19,7 @@ namespace FindoctorService.Services
 
         public async Task AddCategoryAsync(CreateCategoryVM categoryVM)
         {
-            IFormFile file = categoryVM.Image;
+            IFormFile? file = categoryVM.Image;
             string fileName = Guid.NewGuid()+ file.FileName;
             using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "category", fileName), FileMode.Create);
             await file.CopyToAsync(stream);
@@ -40,6 +35,9 @@ namespace FindoctorService.Services
         {
             var category = await unitOfWork.GetRepository<Category>().GetByIdAsync(id);
             await unitOfWork.GetRepository<Category>().DeleteAsync(category);
+
+            string filePath = Path.Combine(environment.WebRootPath,"assets","img","category",category.ImageUrl);
+            File.Delete(filePath);
             await unitOfWork.SaveChangeAsync();
         }
 
@@ -55,15 +53,19 @@ namespace FindoctorService.Services
             return categoryTwo;
         }
 
-        public async Task UpdateCategoryPostAsync(UpdateCategoryVM categoryVM)
+        public async Task UpdateCategoryPostAsync(int? id, UpdateCategoryVM categoryVM)
         {
+            var category = await unitOfWork.GetRepository<Category>().GetByIdAsync(id);
+
             IFormFile file = categoryVM.Image;
             string fileName = Guid.NewGuid().ToString() + file.FileName;
             using var stream = new FileStream(Path.Combine(environment.WebRootPath,"assets","img","category",fileName),FileMode.Create);
             await file.CopyToAsync(stream);
             await stream.FlushAsync();
 
-            Category category = new Category { Name = categoryVM.Name, ImageUrl = fileName };
+            category.Name = categoryVM.Name;
+            category.ImageUrl = fileName;
+            
             await unitOfWork.GetRepository<Category>().UpdateAsync(category);
             await unitOfWork.SaveChangeAsync();
 

@@ -9,6 +9,6 @@ namespace FindoctorService.Services
         Task AddCategoryAsync(CreateCategoryVM categoryVM);
         Task DeleteCategoryAsync(int? id);
         Task<UpdateCategoryVM> UpdateCategoryAsync(int? id);
-        Task UpdateCategoryPostAsync(UpdateCategoryVM categoryVM);
+        Task UpdateCategoryPostAsync(int? id, UpdateCategoryVM categoryVM);
     }
 }

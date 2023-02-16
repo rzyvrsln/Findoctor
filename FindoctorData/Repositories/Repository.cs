@@ -63,10 +63,10 @@ namespace FindoctorData.Repositories
             await Task.Run(() => Table.Remove(entity));
         }
 
-        //public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
-        //{
-        //    return await Table.AnyAsync(predicate);
-        //}
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await Table.AnyAsync(predicate);
+        }
 
         //public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
         //{
