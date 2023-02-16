@@ -38,9 +38,9 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>@clinics.Name</td>
-                            @if(clinics.Description.Length > 20)
+                            @if(clinics.Description.Length > 15)
                             {
-                                <td>@clinics.Description.Substring(0,20) ...</td>
+                                <td>@clinics.Description.Substring(0,15) ...</td>
                             }
                             else
                             {
@@ -48,7 +48,7 @@
                             }
                             <td>@clinics.Location</td>
                             <td>@clinics.Category.Name</td>
-                            <td>@clinics.StartWorkTime.Hour - @clinics.StoptWorkTime.Hour</td>
+                            <td>@clinics.StartWorkTime.Hour. @clinics.StartWorkTime.Minute - @clinics.StoptWorkTime.Hour. @clinics.StoptWorkTime.Minute </td>
                             <td>
                                 <a asp-controller="Category" asp-action="Delete" asp-route-id="@clinics.Id" class="btn btn-danger">Sil</a>
                                 <a asp-controller="Category" asp-action="Update" asp-route-id="@clinics.Id" class="btn btn-warning">Redaktə et</a>

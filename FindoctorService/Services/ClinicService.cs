@@ -28,6 +28,13 @@ namespace FindoctorService.Services
             await unitOfWork.SaveChangeAsync();
         }
 
+        public async Task DeleteClinicAsync(int? id)
+        {
+            var category = await unitOfWork.GetRepository<Category>().GetByIdAsync(id);
+            await unitOfWork.GetRepository<Category>().DeleteAsync(category);
+            await unitOfWork.SaveChangeAsync();
+        }
+
         public async Task<ICollection<Clinic>> GetAllClinicAsync()
         {
             await unitOfWork.GetRepository<Category>().GetAllAsync();

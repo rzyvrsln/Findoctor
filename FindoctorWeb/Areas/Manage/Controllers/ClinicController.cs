@@ -33,10 +33,17 @@ namespace FindoctorWeb.Areas.Manage.Controllers
             return View();
         }
 
-            [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Create(CreateClinicVM clinicVM)
         {
             await clinicService.AddClinicAsync(clinicVM);
+            return RedirectToAction(nameof(Index), "Clinic");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            await clinicService.DeleteClinicAsync(id);
             return RedirectToAction(nameof(Index), "Clinic");
         }
     }
