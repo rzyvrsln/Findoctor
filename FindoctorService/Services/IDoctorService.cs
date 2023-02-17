@@ -7,5 +7,7 @@ namespace FindoctorService.Services
     {
         Task<ICollection<Doctor>> GetAllDoctorAsync();
         Task AddDoctorAsync(CreateDoctorVM doctorVM);
+        Task<UpdateDoctorVM> UpdateDoctorAsync(int? id);
+        Task UpdateDoctorPostAsync(int? id, UpdateDoctorVM doctorVM);
     }
 }

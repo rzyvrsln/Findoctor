@@ -40,5 +40,21 @@ namespace FindoctorWeb.Areas.Manage.Controllers
             await doctorService.AddDoctorAsync(doctorVM);
             return RedirectToAction(nameof(Index), "Doctor");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int? id)
+        {
+            ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
+            ViewBag.Clinics = new SelectList(dbContext.Clinics, nameof(Clinic.Id), nameof(Clinic.Name));
+            var doctors = await doctorService.UpdateDoctorAsync(id);
+            return View(doctors);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int? id, UpdateDoctorVM doctorVM)
+        {
+            await doctorService.UpdateDoctorPostAsync(id, doctorVM);
+            return RedirectToAction(nameof(Index), "Doctor");
+        }
     }
 }
