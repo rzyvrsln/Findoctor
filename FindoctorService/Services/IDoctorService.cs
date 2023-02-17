@@ -9,5 +9,6 @@ namespace FindoctorService.Services
         Task AddDoctorAsync(CreateDoctorVM doctorVM);
         Task<UpdateDoctorVM> UpdateDoctorAsync(int? id);
         Task UpdateDoctorPostAsync(int? id, UpdateDoctorVM doctorVM);
+        Task DeleteDoctorAsync(int? id);
     }
 }

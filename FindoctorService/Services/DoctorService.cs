@@ -43,6 +43,15 @@ namespace FindoctorService.Services
             await unitOfWork.SaveChangeAsync();
         }
 
+        public async Task DeleteDoctorAsync(int? id)
+        {
+            var doctor = await unitOfWork.GetRepository<Doctor>().GetByIdAsync(id);
+            string filePath = Path.Combine(environment.WebRootPath, "assets", "img", "doctor", doctor.ImageUrl);
+            File.Delete(filePath);
+            await unitOfWork.GetRepository<Doctor>().DeleteAsync(doctor);
+            await unitOfWork.SaveChangeAsync();
+        }
+
         public async Task<ICollection<Doctor>> GetAllDoctorAsync()
         {
             return await unitOfWork.GetRepository<Doctor>().GetAllAsync();
