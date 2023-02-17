@@ -1,7 +1,9 @@
 ﻿using FindoctorData.DAL;
 using FindoctorEntity.Entities;
+using FindoctorService.Extensions;
 using FindoctorService.Services;
 using FindoctorViewModel.Entities.DoctorVM;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -12,11 +14,13 @@ namespace FindoctorWeb.Areas.Manage.Controllers
     {
         private readonly IDoctorService doctorService;
         private readonly AppDbContext dbContext;
+        private readonly IValidator<FindoctorEntity.Entities.Doctor> validator;
 
-        public DoctorController(IDoctorService doctorService, AppDbContext dbContext)
+        public DoctorController(IDoctorService doctorService, AppDbContext dbContext, IValidator<FindoctorEntity.Entities.Doctor> validator)
         {
             this.doctorService = doctorService;
             this.dbContext = dbContext;
+            this.validator = validator;
         }
 
         [HttpGet]
@@ -37,8 +41,26 @@ namespace FindoctorWeb.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateDoctorVM doctorVM)
         {
+
             if (!ModelState.IsValid)
             {
+            //    IFormFile file = doctorVM.Image;
+            //    string fileName = Guid.NewGuid() + file.FileName;
+                //FindoctorEntity.Entities.Doctor doctor = new FindoctorEntity.Entities.Doctor
+                //{
+                //    Name = doctorVM.Name,
+                //    Surname = doctorVM.Surname,
+                //    Phone = doctorVM.Phone,
+                //    Email = doctorVM.Email,
+                //    Gender = doctorVM.Gender,
+                //    //ImageUrl = fileName,
+                //    StartWorkTime = doctorVM.StartWorkTime,
+                //    StopWorkTime = doctorVM.StopWorkTime,
+                //    CategoryId = doctorVM.CategoryId,
+                //    ClinicId = doctorVM.ClinicId
+                //};
+                //var result = await validator.ValidateAsync(doctor);
+                //if (!result.IsValid) { result.AddToModelState(this.ModelState);return View(); }
                 ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
                 ViewBag.Clinics = new SelectList(dbContext.Clinics, nameof(Clinic.Id), nameof(Clinic.Name));
                 return View();
