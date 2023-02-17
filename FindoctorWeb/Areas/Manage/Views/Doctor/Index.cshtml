@@ -1,0 +1,66 @@
+﻿@using FindoctorEntity.Entities
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model ICollection<Doctor>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">İdarə paneli</a>
+            </li>
+            <li class="breadcrumb-item active"><a asp-controller="Doctor" asp-action="Create">Həkim əlavə et</a></li>
+        </ol>
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2><i class="fa fa-file"></i>Həkimlər</h2>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Telefon nömrəsi</th>
+                        <th>Email</th>
+                        <th>Cins</th>
+                        <th>Başlama saatı</th>
+                        <th>Bitmə saatı</th>@*
+                        <th>Kateqoriya</th>
+                        <th>Klinika</th>*@
+                        <th style="Width:200px">Şəkil</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var doctors in Model)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@doctors.Name</td>
+                            <td>@doctors.Surname</td>
+                            <td>@doctors.Phone</td>
+                            <td>@doctors.Email</td>
+                            <td>@doctors.Gender</td>
+                            <td>@doctors.StartWorkTime</td>
+                            <td>@doctors.StopWorkTime</td>@*
+                            <td>@doctors.Category.Name</td>
+                            <td>@doctors.Clinic.Name</td>*@
+                            <td><img style="width:100%" src="~/assets/img/doctor/@doctors.ImageUrl" /></td>
+                            <td>
+                                <a asp-controller="Doctor" asp-action="Delete" asp-route-id="@doctors.Id" class="btn btn-danger">Sil</a>
+                                <a asp-controller="Doctor" asp-action="Update" asp-route-id="@doctors.Id" class="btn btn-warning">Redaktə et</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

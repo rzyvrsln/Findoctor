@@ -42,57 +42,70 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                
+
                 @*<li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">My profile</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseProfile">
-                        <li>
-                            <a href="user-profile.html">User profile</a>
-                        </li>
-                        <li>
-                            <a href="doctor-profile.html">Doctor profile</a>
-                        </li>
-                    </ul>
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-wrench"></i>
+                <span class="nav-link-text">My profile</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseProfile">
+                <li>
+                <a href="user-profile.html">User profile</a>
+                </li>
+                <li>
+                <a href="doctor-profile.html">Doctor profile</a>
+                </li>
+                </ul>
                 </li>*@
 
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Klinika</span>
+                        <span class="nav-link-text">Əməliyyatlar</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseProfile">
+
+                        <li>
+                            <a asp-controller="Doctor" asp-action="Index">Həkimlər</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Doctor" asp-action="Create">Həkim əlavə et</a>
+                        </li>
+
+                        <hr />
+
                         <li>
                             <a asp-controller="Clinic" asp-action="Index">Klinikalar</a>
                         </li>
                         <li>
                             <a asp-controller="Clinic" asp-action="Create">Klinika əlavə et</a>
                         </li>
-                    </ul>
-                </li>
-@*
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Kateqoriya</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseProfile">
+
+                        <hr />
+
                         <li>
                             <a asp-controller="Category" asp-action="Index">Kateqoriyalar</a>
                         </li>
                         <li>
                             <a asp-controller="Category" asp-action="Create">Kateqoriya yarat</a>
                         </li>
+
+                        <hr />
+
+                        <li>
+                            <a asp-controller="Patient" asp-action="Index">Xəstələr</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Patient" asp-action="Create">Xəstə əlavə et</a>
+                        </li>
                     </ul>
-                </li>*@
-                
+                </li>
+
             </ul>
             <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
@@ -205,7 +218,7 @@
         </div>
     </nav>
     <!-- /Navigation-->
-@RenderBody()
+    @RenderBody()
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">

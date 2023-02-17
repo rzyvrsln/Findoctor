@@ -11,6 +11,8 @@ namespace FindoctorService.Extensions
         {
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IClinicService, ClinicService>();
+            services.AddScoped<IPatientService, PatientService>();
+            services.AddScoped<IDoctorService, DoctorService>();
             return services;
         }
     }

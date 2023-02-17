@@ -1,6 +1,5 @@
 ﻿using FindoctorCore.Entities;
 using FindoctorEntity.Entities.ManyToMany;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FindoctorEntity.Entities
 {

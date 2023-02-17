@@ -1,0 +1,94 @@
+﻿@using FindoctorViewModel.Entities.DoctorVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model CreateDoctorVM
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">İdarə paneli</a>
+            </li>
+            <li class="breadcrumb-item active"><a asp-controller="Clinic" asp-action="Index">Klinikalara bax</a></li>
+        </ol>
+        <div class="box_general padding_bottom">
+            <div class="header_box version_2">
+                <h2><i class="fa fa-file"></i>Həkim əlavə et</h2>
+            </div>
+            @{
+                string[] genders = { "Kişi", "Qadın", "Heçbiri" };
+            }
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name">Ad</label>
+                    <input asp-for="Name" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname">Soyad</label>
+                    <input asp-for="Surname" class="form-control">
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Telefon nömrəsi</label>
+                    <input asp-for="Phone" class="form-control">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender">Cins</label>
+                    <select class="form-control" asp-for="Gender">
+                        <option disabled selected>Cins seçin</option>
+
+                        @foreach (var gender in genders)
+                        {
+                            <option>@gender</option>
+                        }
+                    </select>
+
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartWorkTime">Başlama saatı</label>
+                    <input asp-for="StartWorkTime" class="form-control">
+                    <span asp-validation-for="StartWorkTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StopWorkTime">Bitmə saatı</label>
+                    <input asp-for="StopWorkTime" class="form-control">
+                    <span asp-validation-for="StopWorkTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId">Kateqoriya</label>
+                    <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
+                        <option disabled selected>Kateqoriya seçin</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ClinicId">Klinika</label>
+                    <select asp-for="ClinicId" asp-items="@ViewBag.Clinics" class="form-control">
+                        <option disabled selected>Klinika seç</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image">Şəkil</label>
+                    <input asp-for="Image" class="form-control">
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </form>
+
+        </div>
+    </div>
+</div>

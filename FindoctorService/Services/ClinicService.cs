@@ -1,6 +1,7 @@
 ﻿using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.ClinicVm;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FindoctorService.Services
 {
@@ -39,6 +40,38 @@ namespace FindoctorService.Services
         {
             await unitOfWork.GetRepository<Category>().GetAllAsync();
             return await unitOfWork.GetRepository<Clinic>().GetAllAsync();
+        }
+
+        public async Task<UpdateClinicVM> UpdateClinicAsync(int? id)
+        {
+            var clinicOne = await unitOfWork.GetRepository<Clinic>().GetByIdAsync(id);
+             UpdateClinicVM clinicTwo = new UpdateClinicVM
+            {
+                Name = clinicOne.Name,
+                Description = clinicOne.Description,
+                Location = clinicOne.Location,
+                StartWorkTime = clinicOne.StartWorkTime,
+                StoptWorkTime = clinicOne.StoptWorkTime,
+                CategoryId = clinicOne.CategoryId
+            };
+            return clinicTwo;
+        }
+
+        public async Task UpdateClinicPostAsync(int? id, UpdateClinicVM clinicVM)
+        {
+            var clinicOne = await unitOfWork.GetRepository<Clinic>().GetByIdAsync(id);
+            if (clinicOne is not null)
+            {
+                clinicOne.Name = clinicVM.Name;
+                clinicOne.Description = clinicVM.Description;
+                clinicOne.Location = clinicVM.Location;
+                clinicOne.StartWorkTime = clinicVM.StartWorkTime;
+                clinicOne.StoptWorkTime = clinicVM.StoptWorkTime;
+                clinicOne.CategoryId = clinicVM.CategoryId;
+
+                await unitOfWork.GetRepository<Clinic>().UpdateAsync(clinicOne);
+                await unitOfWork.SaveChangeAsync();
+            }
         }
     }
 }
