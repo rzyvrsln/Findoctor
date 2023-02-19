@@ -1,5 +1,9 @@
+using FindoctorData.DAL;
 using FindoctorData.Extesions;
+using FindoctorEntity.Entities;
 using FindoctorService.Extensions;
+using Microsoft.AspNetCore.Identity;
+
 namespace FindoctorWeb
 {
     public class Program
@@ -13,6 +17,8 @@ namespace FindoctorWeb
 
             builder.Services.LoadDataLAyerExtension(builder.Configuration);
             builder.Services.LoadServiceLayerExtension();
+
+            
 
             var app = builder.Build();
 

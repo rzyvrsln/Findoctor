@@ -1,7 +1,10 @@
-﻿
+﻿@using FindoctorViewModel.Entities.Account
+
 @{
     ViewData["Title"] = "UserRegister";
 }
+
+@model CreateUserRegisterVM
 
 <main>
 		<div class="bg_color_2">
@@ -13,34 +16,43 @@
 							<form method="post">
 								<div class="box_form">
 									<div class="form-group">
-										<label>Ad</label>
-										<input type="text" class="form-control" placeholder="Adınız">
+										<label asp-for="Name">Ad</label>
+										<input asp-for="Name" class="form-control" placeholder="Adınız">
+										<span asp-validation-for="Name" class="text-danger"></span>
 									</div>
 									<div class="form-group">
-										<label>Soyad</label>
-										<input type="text" class="form-control" placeholder="Soyadınız">
+										<label asp-for="Surname">Soyad</label>
+										<input asp-for="Surname" class="form-control" placeholder="Soyadınız">
+										<span asp-validation-for="Surname" class="text-danger"></span>
 									</div>
 									<div class="form-group">
-										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Email adresiniz">
+										<label asp-for="UserName">Soyad</label>
+									<input asp-for="UserName" class="form-control" placeholder="Istifadəçi adı">
+									<span asp-validation-for="UserName" class="text-danger"></span>
 									</div>
 									<div class="form-group">
-										<label>Şifrə</label>
-									<input type="password" class="form-control" id="password1" name="password1" placeholder="Şifrəniz">
+										<label asp-for="Email">Email</label>
+										<input asp-for="Email" class="form-control" placeholder="Email adresiniz">
+										<span asp-validation-for="Email" class="text-danger"></span>
 									</div>
 									<div class="form-group">
-										<label>Şifrə</label>
-										<input type="password" class="form-control" id="password2" name="password2" placeholder="Şifrəni təsdiqləyin">
+										<label asp-for="Phone">Telefon nömrəsi</label>
+										<input asp-for="Phone" class="form-control" placeholder="Telefon nömrəsi">
+									<span asp-validation-for="Phone" class="text-danger"></span>
 									</div>
-									<div id="pass-info" class="clearfix"></div>
-									<div class="checkbox-holder text-left">
-										<div class="checkbox_2">
-											<input type="checkbox" value="accept_2" id="check_2" name="check_2" checked>
-											<label for="check_2"><span><strong>Qaydalar və Şərtlərlə</strong> razıyam</span></label>
-										</div>
+									<div class="form-group">
+										<label asp-for="Password">Şifrə</label>
+									<input asp-for="Password" class="form-control" placeholder="Şifrəniz">
+										<span asp-validation-for="Password" class="text-danger"></span>
 									</div>
+									<div class="form-group">
+										<label asp-for="ComfirmPassword">Şifrə</label>
+										<input asp-for="ComfirmPassword" class="form-control" placeholder="Şifrəni təsdiqləyin">
+									<span asp-validation-for="ComfirmPassword" class="text-danger"></span>
+								</div>
 									<div class="form-group text-center add_top_30">
-										<a asp-controller="Acoount" asp-action="UserRegister"><input readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
+										<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+										<a><input type="submit" readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
 									</div>
 								</div>
 								<p class="text-center"><small>Siz qeydiyyatdan keçərək həkimlərlə əlaqə yarada bilərsiniz.</small></p>

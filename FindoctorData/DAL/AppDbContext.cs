@@ -1,10 +1,11 @@
 ﻿using FindoctorEntity.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace FindoctorData.DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -12,14 +13,26 @@ namespace FindoctorData.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Clinic> Clinics { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<User> Users { get; set; }
 
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+        //    {
+        //        relationship.DeleteBehavior = DeleteBehavior.Restrict;
+        //    }
+        //}
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
-            {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
-            }
+            modelBuilder.Entity<Doctor>()
+                .HasOne(d => d.Clinic)
+                .WithMany(c => c.Doctors)
+                .HasForeignKey(d => d.ClinicId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUser>().HasKey(u => u.Id);
         }
 
     }

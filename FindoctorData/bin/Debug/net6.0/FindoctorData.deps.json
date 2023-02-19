@@ -9,6 +9,7 @@
       "FindoctorData/1.0.0": {
         "dependencies": {
           "FindoctorEntity": "1.0.0",
+          "FindoctorViewModel": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12",
@@ -577,6 +578,14 @@
         "runtime": {
           "FindoctorEntity.dll": {}
         }
+      },
+      "FindoctorViewModel/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+        },
+        "runtime": {
+          "FindoctorViewModel.dll": {}
+        }
       }
     }
   },
@@ -942,6 +951,11 @@
       "sha512": ""
     },
     "FindoctorEntity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FindoctorViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -81,6 +81,9 @@
             "projectReferences": {
               "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
                 "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+              },
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorViewModel\\FindoctorViewModel.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorViewModel\\FindoctorViewModel.csproj"
               }
             }
           }

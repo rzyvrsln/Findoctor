@@ -919,6 +919,19 @@
         "runtime": {
           "bin/placeholder/FindoctorEntity.dll": {}
         }
+      },
+      "FindoctorViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+        },
+        "compile": {
+          "bin/placeholder/FindoctorViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FindoctorViewModel.dll": {}
+        }
       }
     }
   },
@@ -2286,11 +2299,17 @@
       "type": "project",
       "path": "../FindoctorEntity/FindoctorEntity.csproj",
       "msbuildProject": "../FindoctorEntity/FindoctorEntity.csproj"
+    },
+    "FindoctorViewModel/1.0.0": {
+      "type": "project",
+      "path": "../FindoctorViewModel/FindoctorViewModel.csproj",
+      "msbuildProject": "../FindoctorViewModel/FindoctorViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "FindoctorEntity >= 1.0.0",
+      "FindoctorViewModel >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.12",
@@ -2325,6 +2344,9 @@
           "projectReferences": {
             "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
               "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+            },
+            "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorViewModel\\FindoctorViewModel.csproj": {
+              "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorViewModel\\FindoctorViewModel.csproj"
             }
           }
         }

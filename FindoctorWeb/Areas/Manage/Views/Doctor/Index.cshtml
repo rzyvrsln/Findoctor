@@ -29,8 +29,7 @@
                         <th>Telefon nömrəsi</th>
                         <th>Email</th>
                         <th>Cins</th>
-                        <th>Başlama saatı</th>
-                        <th>Bitmə saatı</th>@*
+                        <th>Saat</th>@*
                         <th>Kateqoriya</th>
                         <th>Klinika</th>*@
                         <th style="Width:200px">Şəkil</th>
@@ -47,8 +46,7 @@
                             <td>@doctors.Phone</td>
                             <td>@doctors.Email</td>
                             <td>@doctors.Gender</td>
-                            <td>@doctors.StartWorkTime</td>
-                            <td>@doctors.StopWorkTime</td>@*
+                            <td>@doctors.StartWorkTime.Hour.@doctors.StartWorkTime.Minute - @doctors.StopWorkTime.Hour.@doctors.StopWorkTime.Minute </td>@*
                             <td>@doctors.Category.Name</td>
                             <td>@doctors.Clinic.Name</td>*@
                             <td><img style="width:100%" src="~/assets/img/doctor/@doctors.ImageUrl" /></td>

@@ -17,3 +17,5 @@ C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\obj\Debug\net6.0\refint\Findocto
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\obj\Debug\net6.0\FindoctorData.pdb
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\obj\Debug\net6.0\FindoctorData.genruntimeconfig.cache
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\obj\Debug\net6.0\ref\FindoctorData.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\bin\Debug\net6.0\FindoctorViewModel.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorData\bin\Debug\net6.0\FindoctorViewModel.pdb

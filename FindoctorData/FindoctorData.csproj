@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FindoctorEntity\FindoctorEntity.csproj" />
+    <ProjectReference Include="..\FindoctorViewModel\FindoctorViewModel.csproj" />
   </ItemGroup>
 
 </Project>

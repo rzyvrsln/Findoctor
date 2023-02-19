@@ -56,12 +56,20 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-6">
-
+                        @if (User.Identity.IsAuthenticated)
+                        {
                             <ul id="top_access">
-                                <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
+                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="pe-7s-user"></i></a></li>
+                                <li><a asp-controller="Account" asp-action="UserOrDoctor"><i class="fa-sign-out"></i></a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul id="top_access">
+                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="pe-7s-user"></i></a></li>
                                 <li><a asp-controller="Account" asp-action="UserOrDoctor"><i class="pe-7s-add-user"></i></a></li>
                             </ul>
-                        
+                        }
                         <nav id="menu" class="main-menu">
                             <ul>
                                 <li><span><a asp-controller="Home" asp-action="Index">Home</a></span></li>
