@@ -3,12 +3,15 @@ using FindoctorService.Extensions;
 using FindoctorService.Services;
 using FindoctorViewModel.Entities.CategoryVM;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Data;
 
 namespace FindoctorWeb.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

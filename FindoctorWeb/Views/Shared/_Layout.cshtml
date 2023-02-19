@@ -59,20 +59,20 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <ul id="top_access">
-                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="pe-7s-user"></i></a></li>
-                                <li><a asp-controller="Account" asp-action="UserOrDoctor"><i class="fa-sign-out"></i></a></li>
+                                <li><a><i @*class="pe-7s-user"*@>@User.Identity.Name</i></a></li>
+                                <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
                             </ul>
                         }
                         else
                         {
                             <ul id="top_access">
-                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="pe-7s-user"></i></a></li>
+                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="icon-login"></i></a></li>
                                 <li><a asp-controller="Account" asp-action="UserOrDoctor"><i class="pe-7s-add-user"></i></a></li>
                             </ul>
                         }
                         <nav id="menu" class="main-menu">
                             <ul>
-                                <li><span><a asp-controller="Home" asp-action="Index">Home</a></span></li>
+                                <li><span><a asp-controller="Home" asp-action="Index">Əsas səhifə</a></span></li>
                             </ul>
                         </nav>
 

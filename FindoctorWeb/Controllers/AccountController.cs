@@ -19,6 +19,12 @@ namespace FindoctorWeb.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> AccessDenied()
+        {
+            return View(nameof(UserLogin));
+        }
+
+        [HttpGet]
         public async Task<IActionResult> UserOrDoctorLogIn()
         {
             return View();

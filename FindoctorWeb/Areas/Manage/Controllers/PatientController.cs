@@ -1,10 +1,12 @@
 ﻿using FindoctorService.Services;
 using FindoctorViewModel.Entities.PatientVM;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FindoctorWeb.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class PatientController : Controller
     {
         private readonly IPatientService patientService;

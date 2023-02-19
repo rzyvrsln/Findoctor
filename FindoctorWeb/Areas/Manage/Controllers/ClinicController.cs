@@ -3,12 +3,15 @@ using FindoctorEntity.Entities;
 using FindoctorService.Services;
 using FindoctorViewModel.Entities.CategoryVM;
 using FindoctorViewModel.Entities.ClinicVm;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data;
 
 namespace FindoctorWeb.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class ClinicController : Controller
     {
         private readonly IClinicService clinicService;
