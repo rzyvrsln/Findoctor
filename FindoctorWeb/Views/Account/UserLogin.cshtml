@@ -17,12 +17,12 @@
                             <div class="box_form">
                                 <div class="form-group">
                                     <label asp-for="UserName">Email</label>
-                                    <input asp-for="UserName" class="form-control" placeholder="Istifadəçi adı">
+                                    <input asp-for="UserName" class="form-control" placeholder="Istifadəçi adı" autocomplete="of">
                                     <span asp-validation-for="UserName" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Password">Şifrə</label>
-                                    <input asp-for="Password" class="form-control" id="password1" name="password1" placeholder="Şifrəniz">
+                                    <input asp-for="Password" class="form-control" placeholder="Şifrəniz" autocomplete="of">
                                     <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
                                 <div id="pass-info" class="clearfix"></div>

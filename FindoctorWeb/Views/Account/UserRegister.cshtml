@@ -7,61 +7,61 @@
 @model CreateUserRegisterVM
 
 <main>
-		<div class="bg_color_2">
-			<div class="container margin_60_35">
-				<div id="register">
-				<h1>Zəhmət olmasa Findoctor-da istifadəçi olaraq qeydiyyatdan keçin!</h1>
-					<div class="row justify-content-center">
-						<div class="col-md-7">
-							<form method="post">
-								<div class="box_form">
-									<div class="form-group">
-										<label asp-for="Name">Ad</label>
-										<input asp-for="Name" class="form-control" placeholder="Adınız">
-										<span asp-validation-for="Name" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="Surname">Soyad</label>
-										<input asp-for="Surname" class="form-control" placeholder="Soyadınız">
-										<span asp-validation-for="Surname" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="UserName">Soyad</label>
-									<input asp-for="UserName" class="form-control" placeholder="Istifadəçi adı">
-									<span asp-validation-for="UserName" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="Email">Email</label>
-										<input asp-for="Email" class="form-control" placeholder="Email adresiniz">
-										<span asp-validation-for="Email" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="Phone">Telefon nömrəsi</label>
-										<input asp-for="Phone" class="form-control" placeholder="Telefon nömrəsi">
-									<span asp-validation-for="Phone" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="Password">Şifrə</label>
-									<input asp-for="Password" class="form-control" placeholder="Şifrəniz">
-										<span asp-validation-for="Password" class="text-danger"></span>
-									</div>
-									<div class="form-group">
-										<label asp-for="ComfirmPassword">Şifrə</label>
-										<input asp-for="ComfirmPassword" class="form-control" placeholder="Şifrəni təsdiqləyin">
-									<span asp-validation-for="ComfirmPassword" class="text-danger"></span>
-								</div>
-									<div class="form-group text-center add_top_30">
-										<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-										<a><input type="submit" readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
-									</div>
-								</div>
-								<p class="text-center"><small>Siz qeydiyyatdan keçərək həkimlərlə əlaqə yarada bilərsiniz.</small></p>
-							</form>
-						</div>
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /register -->
-			</div>
-		</div>
-	</main>
+    <div class="bg_color_2">
+        <div class="container margin_60_35">
+            <div id="register">
+                <h1>Zəhmət olmasa Findoctor-da istifadəçi olaraq qeydiyyatdan keçin!</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <form method="post">
+                            <div class="box_form">
+                                <div class="form-group">
+                                    <label asp-for="Name">Ad</label>
+                                    <input asp-for="Name" class="form-control" placeholder="Adınız" autocomplete="of">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Surname">Soyad</label>
+                                    <input asp-for="Surname" class="form-control" placeholder="Soyadınız" autocomplete="of">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="UserName">İstifadəçi adı</label>
+                                    <input asp-for="UserName" class="form-control" placeholder="Istifadəçi adı" autocomplete="of">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email">Email</label>
+                                    <input asp-for="Email" class="form-control" placeholder="Email adresiniz" autocomplete="of">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Phone">Telefon nömrəsi</label>
+                                    <input asp-for="Phone" class="form-control" placeholder="Telefon nömrəsi" autocomplete="of">
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password">Şifrə</label>
+                                    <input asp-for="Password" class="form-control" placeholder="Şifrəniz" autocomplete="of">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ComfirmPassword">Şifrə</label>
+                                    <input asp-for="ComfirmPassword" class="form-control" placeholder="Şifrəni təsdiqləyin" autocomplete="of">
+                                    <span asp-validation-for="ComfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="form-group text-center add_top_30">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <a><input type="submit" readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
+                                </div>
+                            </div>
+                            <p class="text-center"><small>Siz qeydiyyatdan keçərək həkimlərlə əlaqə yarada bilərsiniz.</small></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /register -->
+        </div>
+    </div>
+</main>

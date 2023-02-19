@@ -42,11 +42,13 @@ namespace FindoctorWeb.Controllers
 
             User appUser = new User
             {
+                Email = registerVM.Email,
                 Name = registerVM.Name,
                 Surname = registerVM.Surname,
-                Email = registerVM.Email,
+                UserName = registerVM.UserName,
                 Phone = registerVM.Phone
             };
+
             IdentityResult result = await _userManager.CreateAsync(appUser, registerVM.Password);
             if (!result.Succeeded)
             {
@@ -57,7 +59,7 @@ namespace FindoctorWeb.Controllers
                 return View();
             }
 
-            await _userManager.AddToRoleAsync(appUser, "Admin");
+            //await _userManager.AddToRoleAsync(appUser, "Admin");
             await _signInManager.SignInAsync(appUser, true);
             return RedirectToAction(nameof(UserLogin), "Account");
         }
@@ -73,10 +75,10 @@ namespace FindoctorWeb.Controllers
         {
             if (!ModelState.IsValid) return View();
             var user = await _userManager.FindByNameAsync(loginVM.UserName);
-            if (user is null) { ModelState.AddModelError("Email", "Bele bir Email yoxdur."); return View(); }
+            if (user is null) { ModelState.AddModelError("UserName", "Bele bir istifadəçi yoxdur."); return View(); }
 
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.IsParsistance, true);
-            if (!result.Succeeded) { ModelState.AddModelError("Email", "Bele bir Email yoxdur."); return View(); }
+            if (!result.Succeeded) { ModelState.AddModelError("UserName", "Bele bir istifadəçi yoxdur."); return View(); }
 
             return RedirectToAction(nameof(Index), "Home");
         }
