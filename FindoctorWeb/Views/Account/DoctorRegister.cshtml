@@ -1,7 +1,10 @@
-﻿
+﻿@using FindoctorViewModel.Entities.Account
+
 @{
     ViewData["Title"] = "DosctorRegister";
 }
+
+@model CraeteDoctorRegisterVM
 
 <main>
 	<div id="hero_register">
@@ -25,20 +28,9 @@
 					<div class="box_form">
 						
 						<form method="post">
-							<div class="row">
-								<div class="col-md-6 ">
-									<div class="form-group">
-										<input class="form-control" placeholder="Ad">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" placeholder="Soyad">
-									</div>
-								</div>
-							</div>
 							
-							<div class="row">
+							
+							@*<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<input class="form-control" placeholder="Yaşadığınız şəhər">
@@ -53,9 +45,9 @@
 										</select>
 									</div>
 								</div>
-							</div>
+							</div>*@
 							<!-- /row -->
-							<div class="row">
+							@*<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<input class="form-control" placeholder="Telefon nömrəsi">
@@ -69,12 +61,34 @@
 										</select>
 									</div>
 								</div>
+							</div>*@
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6 ">
+									<div class="form-group">
+										<input asp-for="Name" class="form-control" placeholder="Ad">
+										<span asp-validation-for="Name" class="text-danger"></span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input asp-for="Surname" class="form-control" placeholder="Soyad">
+										<span asp-validation-for="Surname" class="text-danger"></span>
+									</div>
+								</div>
 							</div>
 							<!-- /row -->
 							<div class="row">
-								<div class="col-lg-12">
+								<div class="col-lg-6">
 									<div class="form-group">
-										<input class="form-control" placeholder="Email adres">
+										<input asp-for="Email" class="form-control" placeholder="Email adres">
+										<span asp-validation-for="Email" class="text-danger"></span>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input asp-for="UserName" class="form-control" placeholder="İstifadəçi adı">
+										<span asp-validation-for="UserName" class="text-danger"></span>
 									</div>
 								</div>
 							</div>
@@ -83,20 +97,22 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input class="form-control" id="password1" placeholder="Şifrə">
+										<input asp-for="Password" class="form-control" id="password1" placeholder="Şifrə">
+										<span asp-validation-for="Password" class="text-danger"></span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input class="form-control" id="password2" placeholder="Şifrəni təsdiqləyin">
+										<input asp-for="ComfirmPassword" class="form-control" id="password2" placeholder="Şifrəni təsdiqləyin">
+										<span asp-validation-for="ComfirmPassword" class="text-danger"></span>
 									</div>
 								</div>
 							</div>
 							<!-- /row -->
 							<div class="form-group text-center add_top_30">
-							<a asp-controller="Account" asp-action="DoctorRegister"><input readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
+							<a><input type="submit" readonly class="btn_1 text-center" value="Qeydiyyatdan keçin"></a>
+							<div asp-validation-summary="ModelOnly"></div>
 							</div>
-							<p class="text-center"><small>gggggggg</small></p>
 						</form>
 					</div>
 					<!-- /box_form -->

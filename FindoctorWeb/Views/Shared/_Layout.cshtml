@@ -62,13 +62,36 @@
                                 <li><span><a asp-controller="Home" asp-action="Index">Əsas səhifə</a></span></li>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <li>
-                                        <span><a href="#0"><i class="icon-user"></i></a></span>
-                                        <ul>
-                                            <li><a href="#">@User.Identity.Name</a></li>
-                                            <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
-                                        </ul>
-                                    </li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <span><a href="#0"><i class="icon-user"></i></a></span>
+                                            <ul>
+                                                <li><a asp-area="Manage" asp-controller="Home" asp-action="Index">@User.Identity.Name</a></li>
+                                                <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    else if (User.IsInRole("Doctor"))
+                                    {
+                                        <li>
+                                            <span><a href="#0"><i class="icon-user"></i></a></span>
+                                            <ul>
+                                                <li><a asp-area="Doctor" asp-controller="Home" asp-action="Index">@User.Identity.Name</a></li>
+                                                <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <span><a href="#0"><i class="icon-user"></i></a></span>
+                                            <ul>
+                                                <li><a href="#">@User.Identity.Name</a></li>
+                                                <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    }
                                 }
                                 else
                                 {

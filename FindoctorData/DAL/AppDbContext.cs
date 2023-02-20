@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace FindoctorData.DAL
 {
@@ -34,6 +35,7 @@ namespace FindoctorData.DAL
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<IdentityUser>().HasKey(u => u.Id);
         }
+
 
     }
 }

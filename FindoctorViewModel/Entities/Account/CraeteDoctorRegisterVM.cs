@@ -2,7 +2,7 @@
 
 namespace FindoctorViewModel.Entities.Account
 {
-    public class CreateUserRegisterVM
+    public class CraeteDoctorRegisterVM
     {
         [Required(ErrorMessage = "Ad boş olmamalıdır")]
         public string Name { get; set; }
@@ -10,9 +10,9 @@ namespace FindoctorViewModel.Entities.Account
         public string Surname { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [DataType(DataType.Password),Required(ErrorMessage = "Şifrə boş olmamalıdır.")]
+        [DataType(DataType.Password), Required(ErrorMessage = "Şifrə boş olmamalıdır.")]
         public string Password { get; set; }
-        [DataType(DataType.Password),Compare(nameof(Password)), Required(ErrorMessage = "Şifrə boş olmamalıdır.")]
+        [DataType(DataType.Password), Compare(nameof(Password)), Required(ErrorMessage = "Şifrə boş olmamalıdır.")]
         public string ComfirmPassword { get; set; }
         [Required(ErrorMessage = "Istifadəçi adı boş olmamalıdır")]
         public string UserName { get; set; }

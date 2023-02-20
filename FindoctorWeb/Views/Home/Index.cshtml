@@ -130,7 +130,7 @@
             <p>Nec graeci sadipscing disputationi ne, mea ea nonumes percipitur. Nonumy ponderum oporteat cu mel, pro movet cetero at.</p>
         </div>
         <div class="row">
-            @foreach (var categories in Model)
+            @foreach (var categories in Model ?? new List<Category>())
             {
                 <div class="col-lg-3 col-md-6">
                     <a href="list.html" class="box_cat_home">
