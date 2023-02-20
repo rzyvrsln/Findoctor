@@ -10,6 +10,7 @@ namespace FindoctorViewModel.Entities.Account
     public class CreateDoctorLoginVM
     {
         [Required(ErrorMessage = "Email boş olmamalıdır.")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [DataType(DataType.Password), Required(ErrorMessage = "Şifrə boş olmamalıdır.")]
         public string Password { get; set; }

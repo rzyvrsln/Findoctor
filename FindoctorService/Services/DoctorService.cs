@@ -1,8 +1,14 @@
-﻿using FindoctorData.UnitOfWorks;
+﻿using FindoctorData.DAL;
+using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.DoctorVM;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FindoctorService.Services
 {
@@ -17,7 +23,7 @@ namespace FindoctorService.Services
             this.environment = environment;
         }
 
-        public async Task AddDoctorAsync(CreateDoctorVM doctorVM)
+        public async Task AddDoctorAsync(CreateDoctorVM doctorVM, string userId)
         {
             IFormFile file = doctorVM.Image;
             string fileName = Guid.NewGuid() + file.FileName;
@@ -27,6 +33,7 @@ namespace FindoctorService.Services
 
             Doctor doctor = new Doctor
             {
+                UserId = userId,
                 Name = doctorVM.Name,
                 Surname = doctorVM.Surname,
                 Phone = doctorVM.Phone,
@@ -64,12 +71,12 @@ namespace FindoctorService.Services
             {
                 Name = doctor.Name,
                 Surname = doctor.Surname,
-                Phone= doctor.Phone,
-                Email= doctor.Email,
-                Gender= doctor.Gender,
-                StartWorkTime= doctor.StartWorkTime,
-                StopWorkTime= doctor.StopWorkTime,
-                CategoryId=doctor.CategoryId,
+                Phone = doctor.Phone,
+                Email = doctor.Email,
+                Gender = doctor.Gender,
+                StartWorkTime = doctor.StartWorkTime,
+                StopWorkTime = doctor.StopWorkTime,
+                CategoryId = doctor.CategoryId,
                 ClinicId = doctor.ClinicId
             };
             return doctorVM;

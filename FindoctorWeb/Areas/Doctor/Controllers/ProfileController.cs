@@ -5,6 +5,11 @@ using FindoctorViewModel.Entities.DoctorVM;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FindoctorWeb.Areas.Doctor.Controllers
 {
@@ -21,6 +26,7 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
             this.dbContext = dbContext;
         }
 
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -28,9 +34,13 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ViewProfile()
+        public async Task<IActionResult> ViewProfile(string userID)
         {
             var doctors = await doctorService.GetAllDoctorAsync();
+            if (dbContext.Doctors.FirstOrDefaultAsync(d => d.UserId == userID) is null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(doctors);
         }
 
@@ -45,44 +55,18 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateDoctorVM doctorVM)
         {
-
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
                 ViewBag.Clinics = new SelectList(dbContext.Clinics, nameof(Clinic.Id), nameof(Clinic.Name));
                 return View();
             }
-            await doctorService.AddDoctorAsync(doctorVM);
+
+            var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            await doctorService.AddDoctorAsync(doctorVM, userid);
+
             return RedirectToAction(nameof(ViewProfile), "Profile");
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Update(int? id)
-        //{
-        //    ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
-        //    ViewBag.Clinics = new SelectList(dbContext.Clinics, nameof(Clinic.Id), nameof(Clinic.Name));
-        //    var doctors = await doctorService.UpdateDoctorAsync(id);
-        //    return View(doctors);
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Update(int? id, UpdateDoctorVM doctorVM)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        ViewBag.Categories = new SelectList(dbContext.Categories, nameof(Category.Id), nameof(Category.Name));
-        //        ViewBag.Clinics = new SelectList(dbContext.Clinics, nameof(Clinic.Id), nameof(Clinic.Name));
-        //        return View();
-        //    }
-        //    await doctorService.UpdateDoctorPostAsync(id, doctorVM);
-        //    return RedirectToAction(nameof(Index), "Doctor");
-        //}
-
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    await doctorService.DeleteDoctorAsync(id);
-        //    return RedirectToAction(nameof(Index), "Doctor");
-        //}
     }
 }

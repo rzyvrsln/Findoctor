@@ -58,8 +58,7 @@ namespace FindoctorWeb.Controllers
                 return View();
             }
 
-            //await _userManager.AddToRoleAsync(appUser, "Admin");
-            await _signInManager.SignInAsync(appUser, false);
+            //await _userManager.AddToRoleAsync(appUser, "Doctor");
             return RedirectToAction(nameof(UserLogin), "Account");
         }
 
@@ -117,8 +116,7 @@ namespace FindoctorWeb.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, "Doctor");
-            await _signInManager.SignInAsync(appUser, false);
-            return RedirectToAction(nameof(Index), "Profile", new { area = "Doctor" });
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         [HttpGet]
@@ -140,6 +138,7 @@ namespace FindoctorWeb.Controllers
         //[HttpGet]
         //public async Task<IActionResult> AddRole()
         //{
+        //    await roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
         //    await roleManager.CreateAsync(new IdentityRole { Name = "Doctor" });
         //    return View();
         //}

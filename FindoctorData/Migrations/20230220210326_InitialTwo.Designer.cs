@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FindoctorData.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230220122836_Initial")]
-    partial class Initial
+    [Migration("20230220210326_InitialTwo")]
+    partial class InitialTwo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

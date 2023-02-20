@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4rK+6VhfapWjHwBOZt5gHK+q1laZcVE0+ifZ486ssqk=",
+  "Hash": "+PdcF7KVacXpA8vy1qXjgQTQ6PTvDEVzwC4yxxbI014=",
   "Source": "FindoctorWeb",
   "BasePath": "_content/FindoctorWeb",
   "Mode": "Default",
@@ -1292,6 +1292,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\2ad8f657-474d-4591-b509-7c74016c932aWhatsApp Image 2022-12-25 at 22.55.42.jpeg"
     },
     {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\2b50e378-f9de-4afa-8543-005038adf56afree-icon-psychology-1491202.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/category/2b50e378-f9de-4afa-8543-005038adf56afree-icon-psychology-1491202.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\2b50e378-f9de-4afa-8543-005038adf56afree-icon-psychology-1491202.png"
+    },
+    {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\aa6cbdd5-0d79-47ae-a571-7eada45f51c9WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
       "SourceId": "FindoctorWeb",
       "SourceType": "Discovered",
@@ -1324,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\e7875720-7514-4cd6-b388-d68a62bc86e5WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\f552761a-05bb-4964-8bd8-9275b96135eafree-icon-psychology-1491202.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/category/f552761a-05bb-4964-8bd8-9275b96135eafree-icon-psychology-1491202.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\f552761a-05bb-4964-8bd8-9275b96135eafree-icon-psychology-1491202.png"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\checkbox.png",
@@ -1528,6 +1562,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\c5251ba1-6bc7-44b8-ac8f-c35618be8b19WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\daf4cf39-0440-481b-bb6d-be3424156a41WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/daf4cf39-0440-481b-bb6d-be3424156a41WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\daf4cf39-0440-481b-bb6d-be3424156a41WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\de114ef3-95b9-42e3-bd38-88e700e55393WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/de114ef3-95b9-42e3-bd38-88e700e55393WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\de114ef3-95b9-42e3-bd38-88e700e55393WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor_listing_1.jpg",
@@ -1938,6 +2006,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\map-marker-contacts.png"
     },
     {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\patient\\001de6b6-a8b6-4cfe-8631-e7391c92ce01free-icon-psychology-1491202.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/patient/001de6b6-a8b6-4cfe-8631-e7391c92ce01free-icon-psychology-1491202.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\patient\\001de6b6-a8b6-4cfe-8631-e7391c92ce01free-icon-psychology-1491202.png"
+    },
+    {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\patient\\1d6dc3d0-658d-4e93-81a5-fd987bcc82e9WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
       "SourceId": "FindoctorWeb",
       "SourceType": "Discovered",
@@ -1970,6 +2055,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\patient\\272db688-6943-4994-a305-c0d4e676a570WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\patient\\4f615ddc-9b8e-4dc3-a36e-14909686cb82clinic.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/patient/4f615ddc-9b8e-4dc3-a36e-14909686cb82clinic.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\patient\\4f615ddc-9b8e-4dc3-a36e-14909686cb82clinic.png"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\patient\\c0c52789-037c-47c6-9eef-fb3120aff53fWhatsApp Image 2022-12-25 at 22.55.42.jpeg",
