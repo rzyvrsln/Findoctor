@@ -19,25 +19,19 @@ namespace FindoctorWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AccessDenied()
-        {
-            return View(nameof(UserLogin));
-        }
+        public async Task<IActionResult> AccessDenied() => View(nameof(UserLogin));
 
         [HttpGet]
-        public async Task<IActionResult> UserOrDoctorLogIn()
-        {
-            return View();
-        }
+        public async Task<IActionResult> Login() => View(nameof(UserLogin));
 
         [HttpGet]
-        public async Task<IActionResult> UserOrDoctor()
-        {
-            return View();
-        }
+        public async Task<IActionResult> UserOrDoctorLogIn() => View();
 
         [HttpGet]
-        public async Task<ActionResult> UserRegister() { return View(); }
+        public async Task<IActionResult> UserOrDoctor() => View();
+
+        [HttpGet]
+        public async Task<ActionResult> UserRegister() => View();
 
         [HttpPost]
         public async Task<IActionResult> UserRegister(CreateUserRegisterVM registerVM)
@@ -71,10 +65,7 @@ namespace FindoctorWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UserLogin()
-        {
-            return View();
-        }
+        public async Task<IActionResult> UserLogin() =>  View();
 
         [HttpPost]
         public async Task<IActionResult> UserLogin(CreateUserLoginVM loginVM)
@@ -98,10 +89,7 @@ namespace FindoctorWeb.Controllers
 
 
         [HttpGet]
-        public ActionResult DoctorRegister()
-        {
-            return View();
-        }
+        public ActionResult DoctorRegister() => View();
 
         //[HttpGet]
         //public async Task<IActionResult> AddRole()

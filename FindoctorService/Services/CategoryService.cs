@@ -1,8 +1,10 @@
-﻿using FindoctorData.UnitOfWorks;
+﻿using FindoctorData.DAL;
+using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.CategoryVM;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace FindoctorService.Services
 {
@@ -10,11 +12,13 @@ namespace FindoctorService.Services
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IWebHostEnvironment environment;
+        private readonly AppDbContext appDbContext;
 
-        public CategoryService(IUnitOfWork unitOfWork, IWebHostEnvironment environment)
+        public CategoryService(IUnitOfWork unitOfWork, IWebHostEnvironment environment, AppDbContext appDbContext)
         {
             this.unitOfWork = unitOfWork;
             this.environment = environment;
+            this.appDbContext = appDbContext;
         }
 
         public async Task AddCategoryAsync(CreateCategoryVM categoryVM)
@@ -44,6 +48,11 @@ namespace FindoctorService.Services
         public async Task<ICollection<Category>> GetAllCategoryAsync()
         {
             return await unitOfWork.GetRepository<Category>().GetAllAsync();
+        }
+
+        public async Task<ICollection<Category>> GetAllIncludeAsync()
+        {
+            return await appDbContext.Categories.Include(c => c.Doctors).Include(c => c.Clinics).ToListAsync();
         }
 
         public async Task<UpdateCategoryVM> UpdateCategoryAsync(int? id)

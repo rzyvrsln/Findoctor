@@ -6,9 +6,5 @@ namespace FindoctorData.UnitOfWorks
     {
         IRepository<T> GetRepository<T>() where T : class, new();
         Task SaveChangeAsync();
-
-        //Task<int> SavaAsync();
-
-        //int Save();
     }
 }

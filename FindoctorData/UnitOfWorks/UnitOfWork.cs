@@ -22,20 +22,5 @@ namespace FindoctorData.UnitOfWorks
             await dbContext.SaveChangesAsync();
         }
 
-        //public async ValueTask DisposeAsync()
-        //{
-        //    await dbContext.DisposeAsync();
-        //}
-
-
-        //public async Task<int> SavaAsync()
-        //{
-        //    return await dbContext.SaveChangesAsync();
-        //}
-
-        //public int Save()
-        //{
-        //    return dbContext.SaveChanges();
-        //}
     }
 }

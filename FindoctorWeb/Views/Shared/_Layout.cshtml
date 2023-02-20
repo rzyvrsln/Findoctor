@@ -56,23 +56,30 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-6">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <ul id="top_access">
-                                <li><a><i @*class="pe-7s-user"*@>@User.Identity.Name</i></a></li>
-                                <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
-                            </ul>
-                        }
-                        else
-                        {
-                            <ul id="top_access">
-                                <li><a asp-controller="Account" asp-action="UserOrDoctorLogIn"><i class="icon-login"></i></a></li>
-                                <li><a asp-controller="Account" asp-action="UserOrDoctor"><i class="pe-7s-add-user"></i></a></li>
-                            </ul>
-                        }
+                       
                         <nav id="menu" class="main-menu">
                             <ul>
                                 <li><span><a asp-controller="Home" asp-action="Index">Əsas səhifə</a></span></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <span><a href="#0"><i class="icon-user"></i></a></span>
+                                        <ul>
+                                            <li><a href="#">@User.Identity.Name</a></li>
+                                            <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <span><a href="#0"><i class="icon-key"></i></a></span>
+                                        <ul>
+                                            <li><a asp-controller="Account" asp-action="UserOrDoctorLogin">Daxil olun</a></li>
+                                            <li><a asp-controller="Account" asp-action="UserOrDoctor">Qeydiyyatdan keçin</a></li>
+                                        </ul>
+                                    </li>
+                                }
                             </ul>
                         </nav>
 
