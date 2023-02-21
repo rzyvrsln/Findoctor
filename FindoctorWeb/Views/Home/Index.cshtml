@@ -133,7 +133,7 @@
             @foreach (var categories in Model ?? new List<Category>())
             {
                 <div class="col-lg-3 col-md-6">
-                    <a href="list.html" class="box_cat_home">
+                    <a asp-area="" asp-controller="Category" asp-action="Index" asp-route-id="@categories.Id" class="box_cat_home">
                         <i class="icon-info-4"></i>
                         <img src="~/assets/img/category/@categories.ImageUrl" width="60" height="60" alt="">
                         <h3>@categories.Name</h3>

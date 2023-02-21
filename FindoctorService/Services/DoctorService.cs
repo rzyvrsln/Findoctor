@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,11 +17,13 @@ namespace FindoctorService.Services
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IWebHostEnvironment environment;
+        private readonly AppDbContext appDbContext;
 
-        public DoctorService(IUnitOfWork unitOfWork, IWebHostEnvironment environment)
+        public DoctorService(IUnitOfWork unitOfWork, IWebHostEnvironment environment, AppDbContext appDbContext)
         {
             this.unitOfWork = unitOfWork;
             this.environment = environment;
+            this.appDbContext = appDbContext;
         }
 
         public async Task AddDoctorAsync(CreateDoctorVM doctorVM, string userId)
@@ -62,6 +65,16 @@ namespace FindoctorService.Services
         public async Task<ICollection<Doctor>> GetAllDoctorAsync()
         {
             return await unitOfWork.GetRepository<Doctor>().GetAllAsync();
+        }
+
+        public async Task<ICollection<Doctor>> GetAllDoctorIncludeAsync(int? id)
+        {
+            var categories = await appDbContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            if (categories is not null)
+            {
+                return await appDbContext.Doctors.Where(d => d.CategoryId == categories.Id).Include(d => d.Category).Include(d => d.Clinic).ToListAsync();
+            }
+            return null;
         }
 
         public async Task<UpdateDoctorVM> UpdateDoctorAsync(int? id)
