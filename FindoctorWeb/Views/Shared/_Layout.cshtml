@@ -76,11 +76,10 @@
                                     }
                                     else if (User.IsInRole("Doctor"))
                                     {
-                                        var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
                                         <li>
                                             <span><a href="#0"><i class="icon-user"></i></a></span>
                                             <ul>
-                                                <li><a asp-area="Doctor" asp-controller="Profile" asp-action="ViewProfile" asp-route-Id="@userid">@User.Identity.Name</a></li>
+                                                <li><a asp-area="Doctor" asp-controller="Profile" asp-action="ViewProfile">@User.Identity.Name</a></li>
                                                 <li><a asp-controller="Account" asp-action="Logout"><i class="icon-logout"></i></a></li>
                                             </ul>
                                         </li>

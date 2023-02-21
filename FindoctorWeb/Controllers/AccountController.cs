@@ -19,10 +19,10 @@ namespace FindoctorWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AccessDenied() => View(nameof(UserLogin));
+        public async Task<IActionResult> AccessDenied() => RedirectToAction(nameof(UserLogin));
 
         [HttpGet]
-        public async Task<IActionResult> Login() => View(nameof(UserLogin));
+        public async Task<IActionResult> Login() => RedirectToAction(nameof(UserLogin));
 
         [HttpGet]
         public async Task<IActionResult> UserOrDoctorLogIn() => View();
@@ -94,7 +94,7 @@ namespace FindoctorWeb.Controllers
         {
 
             if (!ModelState.IsValid) return View();
-            User AppUser = await _userManager.FindByNameAsync(registerVM.Email);
+            User AppUser = await _userManager.FindByEmailAsync(registerVM.Email);
             if (AppUser != null) { ModelState.AddModelError("Email", "Bu email artıq mövcuddur."); return View(); }
 
             User appUser = new User
@@ -116,7 +116,7 @@ namespace FindoctorWeb.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, "Doctor");
-            return RedirectToAction(nameof(Index), "Home");
+            return RedirectToAction("DoctorLogin", "Account");
         }
 
         [HttpGet]
@@ -130,9 +130,10 @@ namespace FindoctorWeb.Controllers
             if (user is null) { ModelState.AddModelError("Email", "Bele bir Email yoxdur."); return View(); }
 
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.IsParsistance, true);
-            if (!result.Succeeded) { ModelState.AddModelError("UserName", "Bele bir Email yoxdur."); return View(); }
+            if (!result.Succeeded) { ModelState.AddModelError("Email", "Bele bir Email yoxdur."); return View(); }
 
-            return RedirectToAction("Create", "Profile", new { area = "Doctor" });
+            
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         //[HttpGet]

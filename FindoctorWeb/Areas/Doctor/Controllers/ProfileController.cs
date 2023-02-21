@@ -6,10 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace FindoctorWeb.Areas.Doctor.Controllers
 {
@@ -32,16 +29,23 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
-        public async Task<IActionResult> ViewProfile(string userID)
+        public async Task<IActionResult> ViewProfile()
         {
-            var doctors = await doctorService.GetAllDoctorAsync();
-            if (dbContext.Doctors.FirstOrDefaultAsync(d => d.UserId == userID) is null)
+            var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var docId = await dbContext.Doctors.FirstOrDefaultAsync(d => d.UserId == userid);
+            if (docId is null)
             {
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctors);
+
+            var cat = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id == docId.CategoryId);
+            var clinic = await dbContext.Clinics.FirstOrDefaultAsync(c => c.Id == docId.ClinicId);
+            ViewBag.Category = cat.Name;
+            ViewBag.Clinic = clinic.Name;
+
+            return View(docId);
         }
 
         [HttpGet]
