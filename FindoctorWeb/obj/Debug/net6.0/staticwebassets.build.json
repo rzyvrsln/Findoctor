@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hMVoaWyGwOIqdursafD74GCcWvA8HFZHUhqpeEl1cKg=",
+  "Hash": "77AM8g8R5NUxdqtgBG7lktkLtJo8bmm0Sn0GEOJp888=",
   "Source": "FindoctorWeb",
   "BasePath": "_content/FindoctorWeb",
   "Mode": "Default",
@@ -1581,6 +1581,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\2d4e499d-42ec-4645-bd10-7dcc8b64d58bWhatsApp Image 2022-12-25 at 22.55.42.jpeg"
     },
     {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\640f2a19-9899-4652-9656-1f361d0a9b2beli.jpg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/640f2a19-9899-4652-9656-1f361d0a9b2beli.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\640f2a19-9899-4652-9656-1f361d0a9b2beli.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\6fdecc1d-b744-4389-be5a-b1e6305821aeeli.jpg",
       "SourceId": "FindoctorWeb",
       "SourceType": "Discovered",
@@ -1664,6 +1681,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\aedcc72e-1153-4461-9a4a-b5466a3df7c8WhatsApp Image 2022-12-25 at 22.55.42.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\b43d514d-f5c0-4d1b-a10e-6bc67ac9d532eli.jpg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/b43d514d-f5c0-4d1b-a10e-6bc67ac9d532eli.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\b43d514d-f5c0-4d1b-a10e-6bc67ac9d532eli.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\bd76fbb0-1660-4e10-92f4-de65809a34f2seyid.jpg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/bd76fbb0-1660-4e10-92f4-de65809a34f2seyid.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\bd76fbb0-1660-4e10-92f4-de65809a34f2seyid.jpg"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\c160076b-a763-4783-9ec5-663245ce686cseyid.jpg",

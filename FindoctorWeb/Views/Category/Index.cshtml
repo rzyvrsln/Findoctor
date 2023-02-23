@@ -40,13 +40,13 @@
                     </div>
                 </li>
                 @*<li>
-                    <h6>Sort by</h6>
-                    <select name="orderby" class="selectbox">
-                        <option value="Closest">Closest</option>
-                        <option value="Best rated">Best rated</option>
-                        <option value="Men">Men</option>
-                        <option value="Women">Women</option>
-                    </select>
+                <h6>Sort by</h6>
+                <select name="orderby" class="selectbox">
+                <option value="Closest">Closest</option>
+                <option value="Best rated">Best rated</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                </select>
                 </li>*@
             </ul>
         </div>
@@ -57,22 +57,30 @@
     <div class="container margin_60_35">
         <div class="row">
             <div class="col-lg-12">
-                @foreach(var doctors in Model)
+                @foreach (var doctors in Model)
                 {
-                    <div class="strip_list fadeIn col-lg-6">
-                    <a href="#0" class="wish_bt"></a>
-                    <figure>
-                        <a href="detail-page.html"><img src="~/assets/img/doctor/@doctors.ImageUrl" alt=""></a>
-                    </figure>
-                    <small>@doctors.Category.Name</small>
-                    <h3>Dr. @doctors.Name</h3>
-                    <p>haqqinda propeertisi yaratmamisam...</p>
-                    <ul>
-                        <li><a href="#0" class="btn_listing">Nəzər sal</a></li>
+                    <div style="display:inline-block;" class="strip_list fadeIn col-lg-6">
+                        <a href="#0" class="wish_bt"></a>
+                        <figure>
+                            <a href="detail-page.html"><img src="~/assets/img/doctor/@doctors.ImageUrl" alt=""></a>
+                        </figure>
+                        <small>@doctors.Category.Name</small>
+                        <h3>Dr. @doctors.Name</h3>
 
-                        <li><a href="detail-page.html">Müraciət edin</a></li>
-                    </ul>
-                </div>
+                        @if (doctors.About.Length > 50)
+                        {
+                            <p>@doctors.About.Substring(0,50)...</p>
+                        }
+                        else
+                        {
+                            <p>@doctors.About</p>
+                        }
+                        <ul>
+                            <li><a asp-controller="Category" asp-action="Detail" asp-route-Id="@doctors.Id" class="btn_listing">Nəzər sal</a></li>
+
+                            <li><a asp-controller="Category" asp-action="Detail" asp-route-Id="@doctors.Id">Müraciət edin</a></li>
+                        </ul>
+                    </div>
                 }
                 <!-- /strip_list -->
 

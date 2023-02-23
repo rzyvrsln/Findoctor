@@ -42,6 +42,8 @@ namespace FindoctorService.Services
                 Phone = doctorVM.Phone,
                 Email = doctorVM.Email,
                 Gender = doctorVM.Gender,
+                About = doctorVM.About,
+                Paymant = doctorVM.Paymant,
                 StartWorkTime = doctorVM.StartWorkTime,
                 StopWorkTime = doctorVM.StopWorkTime,
                 CategoryId = doctorVM.CategoryId,
@@ -87,6 +89,8 @@ namespace FindoctorService.Services
                 Phone = doctor.Phone,
                 Email = doctor.Email,
                 Gender = doctor.Gender,
+                About = doctor.About,
+                Paymant = doctor.Paymant,
                 StartWorkTime = doctor.StartWorkTime,
                 StopWorkTime = doctor.StopWorkTime,
                 CategoryId = doctor.CategoryId,
@@ -110,6 +114,8 @@ namespace FindoctorService.Services
             doctorId.Phone = doctorVM.Phone;
             doctorId.Email = doctorVM.Email;
             doctorId.Gender = doctorVM.Gender;
+            doctorId.About = doctorVM.About;
+            doctorId.Paymant = doctorVM.Paymant;
             doctorId.StartWorkTime = doctorVM.StartWorkTime;
             doctorId.StopWorkTime = doctorVM.StopWorkTime;
             doctorId.CategoryId = doctorVM.CategoryId;

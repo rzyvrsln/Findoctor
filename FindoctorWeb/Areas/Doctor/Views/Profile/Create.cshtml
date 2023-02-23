@@ -52,6 +52,23 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label asp-for="About">Haqqında</label>
+                            <textarea asp-for="About" class="form-control"></textarea>
+                            <span asp-validation-for="About" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Paymant">Ödəniş</label>
+                            <input asp-for="Paymant" class="form-control">
+                            <span asp-validation-for="Paymant" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label asp-for="StartWorkTime">Başlama saatı</label>
                             <input asp-for="StartWorkTime" class="form-control">
                             <span asp-validation-for="StartWorkTime" class="text-danger"></span>

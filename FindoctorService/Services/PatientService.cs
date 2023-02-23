@@ -31,6 +31,8 @@ namespace FindoctorService.Services
                 Surname = patientVM.Surname,
                 Email = patientVM.Email,
                 Gender = patientVM.Gender,
+                Time = patientVM.Time,
+                Paymant = patientVM.Paymant,
                 İmageUrl = fileName
             };
 
@@ -61,6 +63,8 @@ namespace FindoctorService.Services
                 Surname = patientId.Surname,
                 Email = patientId.Email,
                 Gender = patientId.Gender,
+                Time = patientId.Time,
+                Paymant = patientId.Paymant,
             };
 
             return patientVM;
@@ -79,6 +83,8 @@ namespace FindoctorService.Services
             patientOne.Surname = patientVM.Surname;
             patientOne.Email = patientVM.Email;
             patientOne.Gender = patientVM.Gender;
+            patientOne.Time = patientVM.Time;
+            patientOne.Paymant = patientVM.Paymant;
             patientOne.İmageUrl = fileName;
 
             await unitOfWork.GetRepository<Patient>().UpdateAsync(patientOne);

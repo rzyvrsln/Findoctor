@@ -37,7 +37,7 @@ namespace FindoctorWeb.Controllers
         public async Task<IActionResult> UserRegister(CreateUserRegisterVM registerVM)
         {
             if (!ModelState.IsValid) return View();
-            User AppUser = await _userManager.FindByNameAsync(registerVM.Email);
+            User AppUser = await _userManager.FindByEmailAsync(registerVM.Email);
             if (AppUser != null) { ModelState.AddModelError("Email", "Bu email artıq mövcuddur."); return View(); }
 
             User appUser = new User
@@ -58,7 +58,7 @@ namespace FindoctorWeb.Controllers
                 return View();
             }
 
-            //await _userManager.AddToRoleAsync(appUser, "Doctor");
+            await _userManager.AddToRoleAsync(appUser, "User");
             return RedirectToAction(nameof(UserLogin), "Account");
         }
 
@@ -139,8 +139,7 @@ namespace FindoctorWeb.Controllers
         //[HttpGet]
         //public async Task<IActionResult> AddRole()
         //{
-        //    await roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
-        //    await roleManager.CreateAsync(new IdentityRole { Name = "Doctor" });
+        //    await roleManager.CreateAsync(new IdentityRole { Name = "User" });
         //    return View();
         //}
 

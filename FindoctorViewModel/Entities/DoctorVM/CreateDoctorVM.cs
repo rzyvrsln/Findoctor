@@ -13,6 +13,8 @@ namespace FindoctorViewModel.Entities.DoctorVM
         public string Phone { get; set; }
         [DataType(DataType.EmailAddress),Required(ErrorMessage = "Email boş qala bilməz.")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Boş qala bilməz.")]
+        public string About { get; set; }
         [Required(ErrorMessage = "Cins boş qala bilməz.")]
         public string Gender { get; set; }
         [Required(ErrorMessage = "Şəkil boş qala bilməz.")]
@@ -21,6 +23,8 @@ namespace FindoctorViewModel.Entities.DoctorVM
         public DateTime StartWorkTime { get; set; }
         [DataType(DataType.Time,ErrorMessage = "Saat daxil edin.")]
         public DateTime StopWorkTime { get; set; }
+        [Required(ErrorMessage = "Qiymət daxil edin.")]
+        public float Paymant { get; set; }
 
         [Required(ErrorMessage = "Klinika boş qala bilməz.")]
         public int ClinicId { get; set; }
