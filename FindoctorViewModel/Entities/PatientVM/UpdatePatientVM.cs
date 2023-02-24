@@ -25,5 +25,7 @@ namespace FindoctorViewModel.Entities.PatientVM
         public DateTime Time { get; set; }
         [Required(ErrorMessage = "Məbləğ boş olmamalıdır.")]
         public float Paymant { get; set; }
+        [Phone, Required(ErrorMessage = "Nömrə boş olmamalıdır.")]
+        public string Phone { get; set; }
     }
 }

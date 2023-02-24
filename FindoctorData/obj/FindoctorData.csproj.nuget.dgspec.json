@@ -229,7 +229,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

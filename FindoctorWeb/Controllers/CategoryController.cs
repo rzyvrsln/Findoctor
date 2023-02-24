@@ -1,9 +1,12 @@
 ﻿using FindoctorData.DAL;
+using FindoctorEntity.Entities;
 using FindoctorService.Services;
+using FindoctorViewModel.Entities.DoctorPatientCombinedVM;
 using FindoctorViewModel.Entities.PatientVM;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 namespace FindoctorWeb.Controllers
 {
@@ -11,12 +14,14 @@ namespace FindoctorWeb.Controllers
     {
 
         private readonly IDoctorService doctorService;
+        private readonly IPatientService patientService;
         private readonly AppDbContext appDbContext;
 
-        public CategoryController(IDoctorService doctorService, AppDbContext appDbContext)
+        public CategoryController(IDoctorService doctorService, AppDbContext appDbContext, IPatientService patientService = null)
         {
             this.doctorService = doctorService;
             this.appDbContext = appDbContext;
+            this.patientService = patientService;
         }
 
         [HttpGet]
@@ -30,14 +35,85 @@ namespace FindoctorWeb.Controllers
         public async Task<IActionResult> Detail(int? id)
         {
             var doctor = await appDbContext.Doctors.Include(d => d.Category).Include(d => d.Clinic).FirstOrDefaultAsync(d => d.Id == id);
-            return View(doctor);
+            CombinedViewModel model = new CombinedViewModel
+            {
+                doctors = doctor
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Detail(int? id, CombinedViewModel model)
+        {
+            var doctor = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);
+            //if (!(model.createPatientVM.Time.Hour < doctor.StopWorkTime.Hour)) return RedirectToAction(nameof(Detail));
+            //if (!(doctor.StartWorkTime.Hour < model.createPatientVM.Time.Hour)) return RedirectToAction(nameof(Detail));
+            Patient patient = new Patient
+            {
+                Time = model.createPatientVM.Time,
+                Paymant = doctor.Paymant
+            };
+            await appDbContext.Patients.AddAsync(patient);
+            await appDbContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Paymant), new RouteValueDictionary(new { Controller = "Category", Action = "Paymant", patientId = patient.Id }));
+
         }
 
         [HttpGet]
         [Authorize(Roles = "User")]
-        public async Task<IActionResult> Paymant(int? id,CreatePatientVM patientVM)
+        public async Task<IActionResult> Paymant(int? patientId)
+        {
+            var patient = await appDbContext.Patients.FirstOrDefaultAsync(p => p.Id == patientId);
+            if (patient is null) return BadRequest();
+            CombinedViewModel model = new CombinedViewModel
+            {
+                patients = patient
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        protected async Task<IActionResult> Paymant(int? id, CreatePatientVM patientVM)
         {
             
+
+            //await patientService.UpdatePatientPostAsync(id, patientVM);
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Charge(string stripeEmail, string stripeToken)
+        {
+            var customers = new CustomerService();
+            var charger = new ChargeService();
+
+            var customer = customers.Create(new CustomerCreateOptions
+            {
+                Email = stripeEmail,
+                Source = stripeToken
+            });
+
+            var charge = charger.Create(new ChargeCreateOptions
+            {
+                Amount = 500,
+                Description = "Test Pay",
+                Currency = "AZN",
+                Customer = customer.Id,
+                ReceiptEmail = stripeEmail,
+                Metadata = new Dictionary<string, string>()
+                {
+                    {"OrderId","111" },
+                    {"PostCode","LEE111" }
+                }
+
+            });
+
+            if (charge.Status == "succeeded")
+            {
+                string BalanceTransactionId = charge.BalanceTransactionId;
+                return Ok();
+            }
             return View();
         }
     }

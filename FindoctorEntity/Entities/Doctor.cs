@@ -1,5 +1,4 @@
 ﻿using FindoctorCore.Entities;
-using FindoctorEntity.Entities.ManyToMany;
 
 namespace FindoctorEntity.Entities
 {

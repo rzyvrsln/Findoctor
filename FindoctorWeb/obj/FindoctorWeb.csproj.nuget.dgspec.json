@@ -302,7 +302,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj": {
+                "projectPath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorEntity\\FindoctorEntity.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -393,6 +397,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.12, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.7.0, )"
             }
           },
           "imports": [

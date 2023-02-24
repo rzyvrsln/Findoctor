@@ -1,12 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "+lrvaa398grZKjykBIEQdtjTvGyhAN1Lj6kHFvgyf6fUYfgL+vuq5Wq2zMHCdjqdLTTCiLTRhROUaK6dAl17bQ==",
+  "dgSpecHash": "HyfZRAyIYcQ106o0oCvuZF891kMWsetT9nSf/s/EXfctl8o/GtPB6kSHZ1bZjb1C6gKtOQt+3ysp3baM2z1e9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorViewModel\\FindoctorViewModel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.12\\microsoft.aspnetcore.cryptography.internal.6.0.12.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.12\\microsoft.aspnetcore.cryptography.keyderivation.6.0.12.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\Ruslan\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.12\\microsoft.extensions.identity.core.6.0.12.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.12\\microsoft.extensions.identity.stores.6.0.12.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

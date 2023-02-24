@@ -280,3 +280,4 @@ C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FluentValidation
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\obj\Debug\net6.0\FindoctorWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FindoctorViewModel.dll
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FindoctorViewModel.pdb
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Stripe.net.dll

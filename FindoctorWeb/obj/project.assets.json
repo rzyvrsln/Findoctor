@@ -2131,6 +2131,23 @@
           }
         }
       },
+      "Stripe.net/41.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Stripe.net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Stripe.net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3731,6 +3748,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FindoctorEntity": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17"
         },
         "compile": {
@@ -6546,6 +6564,29 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Stripe.net/41.7.0": {
+      "sha512": "ticglbNDtuRFg/gjly8ez3ji5m3LXIaRmoi3cOhI5ZsLasRxM5sWB0BtvgeqRWKNTs4HRZVhUhoSbqC6gcEFHg==",
+      "type": "package",
+      "path": "stripe.net/41.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net461/Stripe.net.dll",
+        "lib/net461/Stripe.net.xml",
+        "lib/net5.0/Stripe.net.dll",
+        "lib/net5.0/Stripe.net.xml",
+        "lib/net6.0/Stripe.net.dll",
+        "lib/net6.0/Stripe.net.xml",
+        "lib/netcoreapp3.1/Stripe.net.dll",
+        "lib/netcoreapp3.1/Stripe.net.xml",
+        "lib/netstandard2.0/Stripe.net.dll",
+        "lib/netstandard2.0/Stripe.net.xml",
+        "stripe.net.41.7.0.nupkg.sha512",
+        "stripe.net.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -10394,7 +10435,8 @@
       "FindoctorService >= 1.0.0",
       "FindoctorViewModel >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.12",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.12"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.12",
+      "Stripe.net >= 41.7.0"
     ]
   },
   "packageFolders": {
@@ -10453,6 +10495,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.12, )"
+          },
+          "Stripe.net": {
+            "target": "Package",
+            "version": "[41.7.0, )"
           }
         },
         "imports": [

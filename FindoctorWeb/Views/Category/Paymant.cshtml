@@ -1,109 +1,139 @@
-﻿
+﻿@using FindoctorViewModel.Entities.DoctorPatientCombinedVM
+
 @{
     ViewData["Title"] = "Paymant";
 }
 
-<main>
-		<div id="breadcrumb">
-			<div class="container">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Category</a></li>
-					<li>Page active</li>
-				</ul>
-			</div>
-		</div>
-		<!-- /breadcrumb -->
+@model CombinedViewModel
 
-		<div class="container margin_60">
-			<div class="row">
-				<div class="col-xl-8 col-lg-8">
-				<div class="box_general_3 cart">
-					<div class="form_title">
-						<h3><strong>1</strong>Sizin məlumatlar</h3>
-						<p>
-							Ödəniş etmək üçün verilənləri doldurmalısınız.
-						</p>
-					</div>
-					@{
-						string[] genders = {"Kişi","Qadın","Heçbiri"};
-					}
-					<div class="step">
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Ad</label>
-									<input type="text" class="form-control" id="firstname_booking" name="firstname_booking" placeholder="Ad">
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Soyad</label>
-									<input type="text" class="form-control" id="lastname_booking" name="lastname_booking" placeholder="Soyad">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Email</label>
-									<input type="email" id="email_booking" name="email_booking" class="form-control" placeholder="Email">
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Cins</label>
-									<select class="form-control">
-										<option disabled selected>Cins seçin</option>
-									@foreach(var gender in genders)
-									{
-										<option>@gender</option>
-									}
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Telefon nömrəsi</label>
-									<input  id="telephone_booking" name="telephone_booking" class="form-control" placeholder="+994">
-								</div>
-							</div>
-						</div>
-					</div>
-					<hr>
-					<!--End step -->
-				</div>
-				</div>
-				<!-- /col -->
-				<aside class="col-xl-4 col-lg-4" id="sidebar">
-					<div class="box_general_3 booking">
-						<form>
-							<div class="title">
-								<h3>Your booking</h3>
-							</div>
-							<div class="summary">
-								<ul>
-									<li>Date: <strong class="float-right">11/12/2017</strong></li>
-									<li>Time: <strong class="float-right">10.30 am</strong></li>
-									<li>Dr. Name: <strong class="float-right">Dr. julia Jhones</strong></li>
-								</ul>
-							</div>
-							<ul class="treatments checkout clearfix">
-								<li class="total">
-									Total <strong class="float-right">$110</strong>
-								</li>
-							</ul>
-							<hr>
-							<a href="confirm.html" class="btn_1 full-width">Confirm and pay</a>
-						</form>
-					</div>
-					<!-- /box_general -->
-				</aside>
-				<!-- /asdide -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</main>
+<main>
+    <div id="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li>Page active</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /breadcrumb -->
+
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <div class="box_general_3 cart">
+                    <div class="form_title">
+                        <h3><strong>1</strong>Sizin məlumatlar</h3>
+                        <p>
+                            Ödəniş etmək üçün verilənləri doldurmalısınız.
+                        </p>
+                    </div>
+                    @{
+                        string[] genders = { "Kişi", "Qadın", "Heçbiri" };
+                    }
+                    <form method="post">
+                        <div class="step">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Ad</label>
+                                        <input asp-for="@Model.createPatientVM.Name" class="form-control" name="firstname_booking" placeholder="Ad" autocomplete="of">
+                                        <span asp-validation-for="@Model.createPatientVM.Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Soyad</label>
+                                        <input asp-for="@Model.createPatientVM.Surname" class="form-control" placeholder="Soyad" autocomplete="of">
+                                        <span asp-validation-for="@Model.createPatientVM.Surname" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input asp-for="@Model.createPatientVM.Email" class="form-control" placeholder="Email" autocomplete="of">
+                                        <span asp-validation-for="@Model.createPatientVM.Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Cins</label>
+                                        <select asp-for="@Model.createPatientVM.Gender" class="form-control">
+                                            <option disabled selected>Cins seçin</option>
+                                            @foreach (var gender in genders)
+                                            {
+                                                <option>@gender</option>
+                                            }
+                                        </select>
+                                        <span asp-validation-for="@Model.createPatientVM.Gender" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-4">
+                                    <div class="form-group">
+                                        <label>Telefon nömrəsi</label>
+                                        <input asp-for="@Model.createPatientVM.Phone" class="form-control" placeholder="+994" autocomplete="of">
+                                        <span asp-validation-for="@Model.createPatientVM.Phone" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4">
+                                    <div class="form-group">
+                                        <label>Qəbul tarixi</label>
+                                        <input readonly asp-for="@Model.createPatientVM.Time.Month" value="@Model.patients.Time.Month" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4">
+                                    <div class="form-group">
+                                        <label>Ödəniləcək məbləğ</label>
+                                        <input readonly asp-for="@Model.createPatientVM.Paymant" value="@Model.patients.Paymant" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </form>
+                    <!--End step -->
+                </div>
+            </div>
+            <!-- /col -->
+            <aside class="col-xl-4 col-lg-4" id="sidebar">
+                <div class="box_general_3 booking">
+                    <form method="post" asp-controller="Category" asp-action="Charge">
+                        <div class="title">
+                            <h3>Rezervasyonunuz</h3>
+                        </div>
+                        <div class="summary">
+                            <ul>
+                                <li>Tarix: <strong class="float-right">@Model.patients.Time.Day/@Model.patients.Time.Month/@Model.patients.Time.Year</strong></li>
+                                <li>Saat: <strong class="float-right">@Model.patients.Time.Hour:@Model.patients.Time.Minute</strong></li>
+                            </ul>
+                        </div>
+                        <ul class="treatments checkout clearfix">
+                            <li class="total">
+                                Ödəniləcək məbləğ <strong class="float-right">@Model.patients.Paymant AZN</strong>
+                            </li>
+                        </ul>
+                        <hr>
+
+                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-locale="auto"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-key="pk_test_51MWQXpBJ7X0imXv0v9sYI7caJCjvbEh3n9rZ9S84qgKvdPgxLNd7T2CkUTSz37KomH3Jw4csGTjjy9B7sEwOuLqO00Ks105CD0"
+                                data-description="Qəbul et və ödə">
+                        </script>
+                        
+                    </form>
+                        
+                </div>
+                <!-- /box_general -->
+            </aside>
+            <!-- /asdide -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>

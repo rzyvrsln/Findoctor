@@ -1,4 +1,4 @@
-﻿namespace FindoctorEntity.Entities.ManyToMany
+﻿namespace FindoctorEntity.Entities
 {
     public class DoctorPatient
     {

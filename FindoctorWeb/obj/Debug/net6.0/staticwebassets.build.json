@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "77AM8g8R5NUxdqtgBG7lktkLtJo8bmm0Sn0GEOJp888=",
+  "Hash": "EweFoXUnwAd1zFPdNl70PNSy/r8FymBcm/drV3jg81Y=",
   "Source": "FindoctorWeb",
   "BasePath": "_content/FindoctorWeb",
   "Mode": "Default",
@@ -1275,6 +1275,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\0ebb6027-7bba-4086-ac14-4d5f409afc4aWhatsApp Image 2022-12-25 at 22.55.42.jpeg"
     },
     {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\14ad9719-790b-4006-b06b-60cc43da1011free-icon-psychology-1491202.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/category/14ad9719-790b-4006-b06b-60cc43da1011free-icon-psychology-1491202.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\14ad9719-790b-4006-b06b-60cc43da1011free-icon-psychology-1491202.png"
+    },
+    {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\2ad8f657-474d-4591-b509-7c74016c932aWhatsApp Image 2022-12-25 at 22.55.42.jpeg",
       "SourceId": "FindoctorWeb",
       "SourceType": "Discovered",
@@ -1358,6 +1375,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\4b25b126-b927-4210-8849-23c0a6bb0a1atooth.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\8d09befa-8f0b-4aa3-93da-4bcdce181ce2tooth.png",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/category/8d09befa-8f0b-4aa3-93da-4bcdce181ce2tooth.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\8d09befa-8f0b-4aa3-93da-4bcdce181ce2tooth.png"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\category\\aa6cbdd5-0d79-47ae-a571-7eada45f51c9WhatsApp Image 2022-12-25 at 22.55.42.jpeg",
@@ -1766,6 +1800,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\d116f395-4e5b-46eb-8ffb-b10815334046eli.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\d7192897-7ebd-4ceb-a8b9-630a90146588eli.jpg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/doctor/d7192897-7ebd-4ceb-a8b9-630a90146588eli.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\doctor\\d7192897-7ebd-4ceb-a8b9-630a90146588eli.jpg"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\doctor\\daf4cf39-0440-481b-bb6d-be3424156a41WhatsApp Image 2022-12-25 at 22.55.42.jpeg",

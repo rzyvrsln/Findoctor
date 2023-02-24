@@ -139,6 +139,8 @@ namespace FindoctorWeb.Controllers
         //[HttpGet]
         //public async Task<IActionResult> AddRole()
         //{
+        //    await roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
+        //    await roleManager.CreateAsync(new IdentityRole { Name = "Doctor" });
         //    await roleManager.CreateAsync(new IdentityRole { Name = "User" });
         //    return View();
         //}

@@ -3,6 +3,7 @@ using FindoctorData.Extesions;
 using FindoctorEntity.Entities;
 using FindoctorService.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Stripe;
 
 namespace FindoctorWeb
 {
@@ -11,7 +12,7 @@ namespace FindoctorWeb
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("sk_test_51MWQXpBJ7X0imXv0LIhseQv7OaFBkB9wSFMxeiLpR4UAASt6LB3cWNavDcPtMU3ek46I1inmvAgJaKYvwQFUXAMM000vWCO6Av");
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

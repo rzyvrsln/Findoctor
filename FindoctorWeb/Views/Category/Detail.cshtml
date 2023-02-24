@@ -1,10 +1,11 @@
 ﻿@using FindoctorEntity.Entities
+@using FindoctorViewModel.Entities.DoctorPatientCombinedVM
 
 @{
     ViewData["Title"] = "Detail";
 }
 
-@model Doctor
+@model CombinedViewModel
 
 <main>
     <div id="breadcrumb">
@@ -36,12 +37,12 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-4">
                                     <figure>
-                                        <img src="~/assets/img/doctor/@Model.ImageUrl" alt="" class="img-fluid">
+                                        <img src="~/assets/img/doctor/@Model.doctors.ImageUrl" alt="" class="img-fluid">
                                     </figure>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
-                                    <small>@Model.Category.Name</small>
-                                    <h1>DR. @Model.Surname @Model.Name</h1>
+                                    <small>@Model.doctors.Category.Name</small>
+                                    <h1>DR. @Model.doctors.Surname @Model.doctors.Name</h1>
                                     <span class="rating">
                                         <i class="icon_star voted"></i>
                                         <i class="icon_star voted"></i>
@@ -56,13 +57,13 @@
                                     </ul>
                                     <ul class="contacts">
                                         <li>
-                                            <h6 style="display:inline;">İşlədiyi Ünvan</h6> -@Model.Clinic.Location @Model.Clinic.Name xəstəxanası
+                                            <h6 style="display:inline;">İşlədiyi Ünvan</h6> -@Model.doctors.Clinic.Location @Model.doctors.Clinic.Name xəstəxanası
                                         </li>
                                         <li>
-                                            <h6 style="display:inline;">Telefon nömrəsi</h6> <a href="tel://994">+994 @Model.Phone</a>
+                                            <h6 style="display:inline;">Telefon nömrəsi</h6> <a href="tel://994">+994 @Model.doctors.Phone</a>
                                         </li>
                                         <li>
-                                            <h6 style="display:inline;">İş saatı</h6> @Model.StartWorkTime.Hour. @Model.StartWorkTime.Minute - @Model.StopWorkTime.Hour.@Model.StopWorkTime.Minute
+                                            <h6 style="display:inline;">İş saatı</h6> @Model.doctors.StartWorkTime.Hour. @Model.doctors.StartWorkTime.Minute - @Model.doctors.StopWorkTime.Hour.@Model.doctors.StopWorkTime.Minute
                                         </li>
                                     </ul>
                                 </div>
@@ -79,7 +80,7 @@
                             <p>Həkim.</p>
                         </div>
                         <div class="wrapper_indent">
-                            <p>@Model.About</p>
+                            <p>@Model.doctors.About</p>
                         </div>
                         <!--  End wrapper indent -->
 
@@ -270,7 +271,7 @@
             <!-- /col -->
             <aside class="col-xl-4 col-lg-4" id="sidebar">
                 <div class="box_general_3 booking">
-                    <form>
+                    <form method="post">
                         @{
                             DateTime time = DateTime.Now;
                         }
@@ -281,7 +282,15 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input class="form-control">
+                                    @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                                    {
+                                        <input value="Bu gün işləmirik." class="form-control">
+                                    }
+                                    else
+                                    {
+                                        <input asp-for="@Model.createPatientVM.Time" class="form-control">
+                                        <span asp-validation-for="@Model.createPatientVM.Time" class="text-danger"></span>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -289,26 +298,36 @@
                         <ul class="treatments clearfix">
                             <li>
                                 <div style="text-align:center;font-size:18px;" class="checkbox">
-                                    <label>@Model.Category.Name <strong>@Model.Paymant AZN</strong></label>
+                                    <label>@Model.doctors.Category.Name <strong><input readonly asp-for="@Model.createPatientVM.Paymant" value="@Model.doctors.Paymant" /> AZN</strong></label>
                                 </div>
                             </li>
                         </ul>
                         <hr>
-                        @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                        @if (User.Identity.IsAuthenticated)
                         {
-                            <a class="btn_1 full-width">İş günü deyil</a>
+                            @if (User.IsInRole("User"))
+                            {
+                                @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                                {
+                                    <a class="btn_1 full-width">İş günü deyil</a>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn_1 full-width">Müraciət edin</button>
+                                }
+                            }
                         }
                         else
                         {
-                            <a asp-controller="Category" asp-action="Paymant" class="btn_1 full-width">Müraciət edin</a>
+                            <a asp-controller="Account" asp-action="UserLogin" class="btn_1 full-width">Daxil olun və ya qeydiyyatdan keçin</a>
                         }
                     </form>
-                </div>
-                <!-- /box_general -->
-            </aside>
-            <!-- /asdide -->
+                    </div>
+                    <!-- /box_general -->
+                </aside>
+                <!-- /asdide -->
+            </div>
+            <!-- /row -->
         </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</main>
+        <!-- /container -->
+    </main>

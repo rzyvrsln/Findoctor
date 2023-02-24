@@ -173,7 +173,7 @@ namespace FindoctorData.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("FindoctorEntity.Entities.ManyToMany.DoctorPatient", b =>
+            modelBuilder.Entity("FindoctorEntity.Entities.DoctorPatient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,7 +193,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("DoctorPatient");
+                    b.ToTable("DoctorPatients");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>
@@ -208,25 +208,24 @@ namespace FindoctorData.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Paymant")
                         .HasColumnType("real");
 
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Time")
@@ -495,7 +494,7 @@ namespace FindoctorData.Migrations
                     b.Navigation("Clinic");
                 });
 
-            modelBuilder.Entity("FindoctorEntity.Entities.ManyToMany.DoctorPatient", b =>
+            modelBuilder.Entity("FindoctorEntity.Entities.DoctorPatient", b =>
                 {
                     b.HasOne("FindoctorEntity.Entities.Doctor", "Doctor")
                         .WithMany("DoctorPatients")

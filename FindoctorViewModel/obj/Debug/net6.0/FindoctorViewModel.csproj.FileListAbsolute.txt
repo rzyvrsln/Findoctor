@@ -10,3 +10,8 @@ C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\obj\Debug\net6.0\FindoctorV
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\obj\Debug\net6.0\refint\FindoctorViewModel.dll
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\obj\Debug\net6.0\FindoctorViewModel.pdb
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\obj\Debug\net6.0\ref\FindoctorViewModel.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\bin\Debug\net6.0\FindoctorCore.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\bin\Debug\net6.0\FindoctorEntity.dll
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\bin\Debug\net6.0\FindoctorEntity.pdb
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\bin\Debug\net6.0\FindoctorCore.pdb
+C:\Users\Ruslan\Desktop\Findoctor\FindoctorViewModel\obj\Debug\net6.0\FindoctorViewModel.csproj.CopyComplete

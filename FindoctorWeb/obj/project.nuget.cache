@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2N3J1l8IDW4KYfnE5sNF6uUXfCcHOsBTRclFLBUVOqbRIvjUnZEFahuQysAlnWshJ4XqNCY1GrKQ2yHoVkJ6sw==",
+  "dgSpecHash": "S/zkur+81q+0vbUrIc8c2BH985Rol8rIe4wr2+dDwDPAfC+Ei+EPm8VR17XiogKTITx1wgB251JD7sWeygrFuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\FindoctorWeb.csproj",
   "expectedPackageFiles": [
@@ -103,6 +103,7 @@
     "C:\\Users\\Ruslan\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Ruslan\\.nuget\\packages\\stripe.net\\41.7.0\\stripe.net.41.7.0.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruslan\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

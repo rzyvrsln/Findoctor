@@ -21,9 +21,11 @@ namespace FindoctorViewModel.Entities.PatientVM
         public string Gender { get; set; }
         [Required(ErrorMessage = "Şəkil boş olmamalıdır.")]
         public IFormFile? Image { get; set; }
-        [Required(ErrorMessage = "Saat boş olmamalıdır.")]
+        [DataType(DataType.Time),Required(ErrorMessage = "Saat boş olmamalıdır.")]
         public DateTime Time { get; set; }
         [Required(ErrorMessage = "Məbləğ boş olmamalıdır.")]
         public float Paymant { get; set; }
+        [Phone,Required(ErrorMessage = "Nömrə boş olmamalıdır.")]
+        public string Phone { get; set; }
     }
 }
