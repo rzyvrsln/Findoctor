@@ -279,21 +279,27 @@
                             <h3>Müraciət üçün</h3>
                             <small>Şənbə və bazar günləri işləmirik.</small>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
-                                    {
-                                        <input value="Bu gün işləmirik." class="form-control">
-                                    }
-                                    else
-                                    {
-                                        <input asp-for="@Model.createPatientVM.Time" class="form-control">
-                                        <span asp-validation-for="@Model.createPatientVM.Time" class="text-danger"></span>
-                                    }
+                        @*@if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <p>Bu gün işləmirik.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }*@
+                       @* else
+                        {*@
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input asp-for="@Model.createPatientVM.Time" class="form-control">
+                                        <span asp-validation-for="@Model.createPatientVM.Time" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        @*}*@
                         <!-- /row -->
                         <ul class="treatments clearfix">
                             <li>
@@ -307,14 +313,14 @@
                         {
                             @if (User.IsInRole("User"))
                             {
-                                @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                                @*@if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
                                 {
                                     <a class="btn_1 full-width">İş günü deyil</a>
-                                }
-                                else
-                                {
+                                }*@
+                                @*else
+                                {*@
                                     <button type="submit" class="btn_1 full-width">Müraciət edin</button>
-                                }
+                                @*}*@
                             }
                         }
                         else
@@ -322,12 +328,12 @@
                             <a asp-controller="Account" asp-action="UserLogin" class="btn_1 full-width">Daxil olun və ya qeydiyyatdan keçin</a>
                         }
                     </form>
-                    </div>
-                    <!-- /box_general -->
-                </aside>
-                <!-- /asdide -->
-            </div>
-            <!-- /row -->
+                </div>
+                <!-- /box_general -->
+            </aside>
+            <!-- /asdide -->
         </div>
-        <!-- /container -->
-    </main>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>

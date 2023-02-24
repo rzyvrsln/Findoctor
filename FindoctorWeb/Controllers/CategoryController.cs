@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
+using Stripe.FinancialConnections;
 
 namespace FindoctorWeb.Controllers
 {
@@ -73,48 +74,41 @@ namespace FindoctorWeb.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        protected async Task<IActionResult> Paymant(int? id, CreatePatientVM patientVM)
-        {
-            
 
-            //await patientService.UpdatePatientPostAsync(id, patientVM);
-            return View();
+        [HttpPost]
+        public async Task<IActionResult> Charge(string stripeEmail, string stripeToken, CombinedViewModel model)
+        {
+
+            try
+            {
+                var options = new ChargeCreateOptions
+                {
+                    Amount = (long)(model.createPatientVM.Paymant * 100),
+                    Description = "İstifadəçi ödənişi",
+                    Currency = "AZN",
+                    ReceiptEmail = stripeEmail,
+                    Source = stripeToken
+                };
+                var service = new ChargeService();
+                service.Create(options);
+            }
+            catch(StripeException ex)
+            {
+                if (ex.StripeError != null && ex.StripeError.Code == "amount_too_small")
+                {
+                    throw new Exception($"Charge amount of {model.createPatientVM.Paymant} AZN is below the minimum allowed amount.");
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            await patientService.AddPatientAsync(model.createPatientVM);
+            return RedirectToAction(nameof(SuccessComfirm));
         }
 
         [HttpGet]
-        public async Task<IActionResult> Charge(string stripeEmail, string stripeToken)
-        {
-            var customers = new CustomerService();
-            var charger = new ChargeService();
-
-            var customer = customers.Create(new CustomerCreateOptions
-            {
-                Email = stripeEmail,
-                Source = stripeToken
-            });
-
-            var charge = charger.Create(new ChargeCreateOptions
-            {
-                Amount = 500,
-                Description = "Test Pay",
-                Currency = "AZN",
-                Customer = customer.Id,
-                ReceiptEmail = stripeEmail,
-                Metadata = new Dictionary<string, string>()
-                {
-                    {"OrderId","111" },
-                    {"PostCode","LEE111" }
-                }
-
-            });
-
-            if (charge.Status == "succeeded")
-            {
-                string BalanceTransactionId = charge.BalanceTransactionId;
-                return Ok();
-            }
-            return View();
-        }
+        public async Task<IActionResult> SuccessComfirm() => View();
+        
     }
 }

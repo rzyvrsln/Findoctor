@@ -19,11 +19,13 @@ namespace FindoctorService.Services
 
         public async Task AddPatientAsync(CreatePatientVM patientVM)
         {
-            IFormFile file = patientVM.Image;
-            string fileName = Guid.NewGuid() + file.FileName;
-            using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
-            await file.CopyToAsync(stream);
-            await stream.FlushAsync();
+            #region
+            //IFormFile file = patientVM.Image;
+            //string fileName = Guid.NewGuid() + file.FileName;
+            //using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
+            //await file.CopyToAsync(stream);
+            //await stream.FlushAsync();
+            #endregion
 
             Patient patient = new Patient
             {
@@ -33,7 +35,7 @@ namespace FindoctorService.Services
                 Gender = patientVM.Gender,
                 Time = patientVM.Time,
                 Paymant = patientVM.Paymant,
-                İmageUrl = fileName
+                Phone = patientVM.Phone
             };
 
             await unitOfWork.GetRepository<Patient>().AddAsync(patient);
@@ -73,11 +75,11 @@ namespace FindoctorService.Services
         public async Task UpdatePatientPostAsync(int? id, UpdatePatientVM patientVM)
         {
             var patientOne = await unitOfWork.GetRepository<Patient>().GetByIdAsync(id);
-            IFormFile file = patientVM.Image;
-            string fileName = Guid.NewGuid() + file.FileName;
-            using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
-            await file.CopyToAsync(stream);
-            await stream.FlushAsync();
+            //IFormFile file = patientVM.Image;
+            //string fileName = Guid.NewGuid() + file.FileName;
+            //using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
+            //await file.CopyToAsync(stream);
+            //await stream.FlushAsync();
 
             patientOne.Name = patientVM.Name;
             patientOne.Surname = patientVM.Surname;
@@ -85,8 +87,7 @@ namespace FindoctorService.Services
             patientOne.Gender = patientVM.Gender;
             patientOne.Time = patientVM.Time;
             patientOne.Paymant = patientVM.Paymant;
-            patientOne.İmageUrl = fileName;
-
+            patientOne.Phone = patientVM.Phone;
             await unitOfWork.GetRepository<Patient>().UpdateAsync(patientOne);
             await unitOfWork.SaveChangeAsync();
 

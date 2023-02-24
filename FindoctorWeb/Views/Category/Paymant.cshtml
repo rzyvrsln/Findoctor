@@ -19,25 +19,25 @@
     <!-- /breadcrumb -->
 
     <div class="container margin_60">
-        <div class="row">
-            <div class="col-xl-8 col-lg-8">
-                <div class="box_general_3 cart">
-                    <div class="form_title">
-                        <h3><strong>1</strong>Sizin məlumatlar</h3>
-                        <p>
-                            Ödəniş etmək üçün verilənləri doldurmalısınız.
-                        </p>
-                    </div>
-                    @{
-                        string[] genders = { "Kişi", "Qadın", "Heçbiri" };
-                    }
-                    <form method="post">
+        <form method="post" asp-controller="Category" asp-action="Charge">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="box_general_3 cart">
+                        <div class="form_title">
+                            <h3><strong>1</strong>Sizin məlumatlar</h3>
+                            <p>
+                                Ödəniş etmək üçün verilənləri doldurmalısınız.
+                            </p>
+                        </div>
+                        @{
+                            string[] genders = { "Kişi", "Qadın", "Heçbiri" };
+                        }
                         <div class="step">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Ad</label>
-                                        <input asp-for="@Model.createPatientVM.Name" class="form-control" name="firstname_booking" placeholder="Ad" autocomplete="of">
+                                        <input asp-for="@Model.createPatientVM.Name" class="form-control" placeholder="Ad" autocomplete="of">
                                         <span asp-validation-for="@Model.createPatientVM.Name" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -81,28 +81,24 @@
                                 </div>
                                 <div class="col-md-6 col-sm-4">
                                     <div class="form-group">
-                                        <label>Qəbul tarixi</label>
-                                        <input readonly asp-for="@Model.createPatientVM.Time.Month" value="@Model.patients.Time.Month" class="form-control">
+                                        <input readonly asp-for="@Model.createPatientVM.Time" value="@Model.patients.Time" type="hidden" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-4">
                                     <div class="form-group">
-                                        <label>Ödəniləcək məbləğ</label>
-                                        <input readonly asp-for="@Model.createPatientVM.Paymant" value="@Model.patients.Paymant" class="form-control">
+                                        <input readonly asp-for="@Model.createPatientVM.Paymant" type="hidden" value="@Model.patients.Paymant" class="form-control">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr>
-
-                    </form>
-                    <!--End step -->
+                        <!--End step -->
+                    </div>
                 </div>
-            </div>
-            <!-- /col -->
-            <aside class="col-xl-4 col-lg-4" id="sidebar">
-                <div class="box_general_3 booking">
-                    <form method="post" asp-controller="Category" asp-action="Charge">
+                <!-- /col -->
+                <aside class="col-xl-4 col-lg-4" id="sidebar">
+                    <div class="box_general_3 booking">
+
                         <div class="title">
                             <h3>Rezervasyonunuz</h3>
                         </div>
@@ -121,18 +117,21 @@
 
                         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                 data-locale="auto"
+                                data-amount="@Model.patients.Paymant"
                                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                 data-key="pk_test_51MWQXpBJ7X0imXv0v9sYI7caJCjvbEh3n9rZ9S84qgKvdPgxLNd7T2CkUTSz37KomH3Jw4csGTjjy9B7sEwOuLqO00Ks105CD0"
                                 data-description="Qəbul et və ödə">
                         </script>
-                        
-                    </form>
-                        
-                </div>
-                <!-- /box_general -->
-            </aside>
-            <!-- /asdide -->
-        </div>
+
+
+                    </div>
+                    <!-- /box_general -->
+                </aside>
+                <!-- /asdide -->
+            </div>
+
+        </form>
+
         <!-- /row -->
     </div>
     <!-- /container -->
