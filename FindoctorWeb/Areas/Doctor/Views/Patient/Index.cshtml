@@ -26,23 +26,25 @@
                         <th>Ad</th>
                         <th>Soyad</th>
                         <th>Email</th>
+                        <th>Telefon</th>
                         <th>Cins</th>
-                        <th style="Width:200px">Şəkil</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                   @foreach (var patients in Model)
+                    @foreach (var dp in Model)
                     {
+                        
                         <tr>
                             <th scope="row">1</th>
-                            <td>@patients.Name</td>
-                            <td>@patients.Surname</td>
-                            <td>@patients.Email</td>
-                            <td>@patients.Gender</td>
-                            <td><img style="width:100%" src="~/assets/img/patient/@patients.İmageUrl" /></td>
+                            <td>@dp.Name</td>
+                            <td>@dp.Surname</td>
+                            <td>@dp.Email</td>
+                            <td>@dp.Phone</td>
+                            <td>@dp.Gender</td>
                             <td>
-                                <a asp-controller="Patient" asp-action="Delete" asp-route-id="@patients.Id" class="btn btn-danger">Sil</a>
+                                <a asp-controller="Patient" asp-action="Comfirm" asp-route-Id="@dp.Id" class="btn btn-success">Qəbul et</a>
+                                <a asp-controller="Patient" asp-action="Delete" asp-route-id="@dp.Id" class="btn btn-danger">Sil</a>
                             </td>
                         </tr>
                     }

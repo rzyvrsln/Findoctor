@@ -49,16 +49,16 @@ namespace FindoctorService.Services
         public async Task DeletePatientAsync(int? id)
         {
             var patientId = await unitOfWork.GetRepository<Patient>().GetByIdAsync(id);
-            string filePath = Path.Combine(environment.WebRootPath, "assets", "img", "patient", patientId.İmageUrl);
-            File.Delete(filePath);
+            #region
+            //string filePath = Path.Combine(environment.WebRootPath, "assets", "img", "patient", patientId.İmageUrl);
+            //File.Delete(filePath);
+            #endregion
             await unitOfWork.GetRepository<Patient>().DeleteAsync(patientId);
             await unitOfWork.SaveChangeAsync();
         }
 
         public async Task<ICollection<Patient>> GetAllPatientAsync()
         {
-            
-
             return await unitOfWork.GetRepository<Patient>().GetAllAsync();
         }
 
@@ -91,11 +91,14 @@ namespace FindoctorService.Services
         public async Task UpdatePatientPostAsync(int? id, UpdatePatientVM patientVM)
         {
             var patientOne = await unitOfWork.GetRepository<Patient>().GetByIdAsync(id);
+
+            #region For Image
             //IFormFile file = patientVM.Image;
             //string fileName = Guid.NewGuid() + file.FileName;
             //using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
             //await file.CopyToAsync(stream);
             //await stream.FlushAsync();
+            #endregion
 
             patientOne.Name = patientVM.Name;
             patientOne.Surname = patientVM.Surname;

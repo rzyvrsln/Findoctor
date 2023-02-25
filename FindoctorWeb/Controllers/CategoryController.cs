@@ -68,6 +68,9 @@ namespace FindoctorWeb.Controllers
                 doctors = doctor,
                 doctorPatient = doctorPatient
             };
+
+            
+
             return View(model);
         }
 
@@ -83,6 +86,15 @@ namespace FindoctorWeb.Controllers
 
             await appDbContext.Patients.AddAsync(patient);
             await appDbContext.SaveChangesAsync();
+
+            DoctorPatient dp = new DoctorPatient
+            {
+                DoctorId = doctor.Id,
+                PatientId = patient.Id
+            };
+            await appDbContext.DoctorPatients.AddAsync(dp);
+            await appDbContext.SaveChangesAsync();
+
             return RedirectToAction(nameof(Paymant), new RouteValueDictionary(new { Controller = "Category", Action = "Paymant", patientId = patient.Id }));
 
         }
@@ -131,7 +143,7 @@ namespace FindoctorWeb.Controllers
                     return NotFound();
                 }
             }
-            await patientService.RemoveNullTables();
+            //await patientService.RemoveNullTables();
             await patientService.AddPatientAsync(model.createPatientVM);
             return RedirectToAction(nameof(SuccessComfirm));
         }

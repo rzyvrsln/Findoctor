@@ -36,7 +36,7 @@ namespace FindoctorData.Migrations
                 name: "Id",
                 table: "DoctorPatients",
                 type: "int",
-                nullable: false,
+                nullable: true,
                 defaultValue: 0)
                 .Annotation("SqlServer:Identity", "1, 1");
 

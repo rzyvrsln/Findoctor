@@ -16,14 +16,6 @@ namespace FindoctorData.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<DoctorPatient> DoctorPatients { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
-        //    {
-        //        relationship.DeleteBehavior = DeleteBehavior.Restrict;
-        //    }
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Doctor>()
