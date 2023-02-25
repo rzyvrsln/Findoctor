@@ -9,16 +9,19 @@ namespace FindoctorWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICategoryService categoryService;
+        private readonly IDoctorService doctorService;
 
-        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService = null)
+        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService = null, IDoctorService doctorService = null)
         {
             _logger = logger;
             this.categoryService = categoryService;
+            this.doctorService = doctorService;
         }
 
         public async Task<IActionResult> Index()
         {
             var categories = await categoryService.GetAllIncludeAsync();
+            ViewBag.Doctors = await doctorService.GetAllDoctorAsync();
             return View(categories);
         }
 

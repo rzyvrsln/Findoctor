@@ -1,8 +1,10 @@
-﻿using FindoctorData.UnitOfWorks;
+﻿using FindoctorData.DAL;
+using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.PatientVM;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace FindoctorService.Services
 {
@@ -10,16 +12,18 @@ namespace FindoctorService.Services
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IWebHostEnvironment environment;
+        private readonly AppDbContext appDbContext;
 
-        public PatientService(IUnitOfWork unitOfWork, IWebHostEnvironment environment)
+        public PatientService(IUnitOfWork unitOfWork, IWebHostEnvironment environment, AppDbContext appDbContext)
         {
             this.unitOfWork = unitOfWork;
             this.environment = environment;
+            this.appDbContext = appDbContext;
         }
 
         public async Task AddPatientAsync(CreatePatientVM patientVM)
         {
-            #region
+            #region For Image
             //IFormFile file = patientVM.Image;
             //string fileName = Guid.NewGuid() + file.FileName;
             //using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "patient", fileName), FileMode.Create);
@@ -53,7 +57,19 @@ namespace FindoctorService.Services
 
         public async Task<ICollection<Patient>> GetAllPatientAsync()
         {
+            
+
             return await unitOfWork.GetRepository<Patient>().GetAllAsync();
+        }
+
+        public async Task RemoveNullTables()
+        {
+            var nullNameItems = await appDbContext.Patients.Where(item => item.Name == null || item.Surname == null || item.Email == null || item.Gender == null).ToListAsync();
+            foreach (var item in nullNameItems)
+            {
+                appDbContext.Patients.Remove(item);
+                await unitOfWork.SaveChangeAsync();
+            }
         }
 
         public async Task<UpdatePatientVM> UpdatePatientAsync(int? id)

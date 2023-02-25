@@ -32,6 +32,9 @@ namespace FindoctorData.DAL
                 .HasForeignKey(d => d.ClinicId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            modelBuilder.Entity<DoctorPatient>()
+            .HasKey(dp => new { dp.DoctorId, dp.PatientId });
+
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<IdentityUser>().HasKey(u => u.Id);
         }

@@ -4,6 +4,7 @@ using FindoctorData.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FindoctorData.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230225143530_InitialFourteen")]
+    partial class InitialFourteen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
@@ -94,7 +96,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Clinics", (string)null);
+                    b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
@@ -173,7 +175,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("ClinicId");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.DoctorPatient", b =>
@@ -188,7 +190,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("DoctorPatients", (string)null);
+                    b.ToTable("DoctorPatients");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>
@@ -234,7 +236,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Patients", (string)null);
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

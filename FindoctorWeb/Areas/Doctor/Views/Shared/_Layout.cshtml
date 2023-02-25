@@ -47,6 +47,18 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Profilim</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseProfile">
+
+                        <li>
+                            <a asp-controller="Profile" asp-action="ViewProfile">Profilim</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
                     <a class="nav-link" href="messages.html">
                         <i class="fa fa-fw fa-envelope-open"></i>
@@ -77,18 +89,7 @@
                         <span class="nav-link-text">Add listing</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">My profile</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseProfile">
-                       
-                        <li>
-                            <a asp-controller="Profile" asp-action="ViewProfile">Profilim</a>
-                        </li>
-                    </ul>
-                </li>
+                
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-gear"></i>

@@ -73,20 +73,20 @@
     <div class="bg_color_1">
         <div class="container margin_120_95">
             <div class="main_title">
-                <h2>Most Viewed doctors</h2>
-                <p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri.</p>
+                <h2>Ən çox baxılan həkimlər</h2>
+                <p>Həkimlərin izlənmə sayına görə ən üst səviyyədə olan həkimlər.</p>
             </div>
             <div id="reccomended" class="owl-carousel owl-theme">
-                @foreach(var doctors in Model)
+                @foreach (var doctors in (List<Doctor>)ViewBag.Doctors)@*GetRange(0,5)*@
                 {
-                <div class="item">
-                    <a href="detail-page.html">
-                        <div class="views"><i class="icon-eye-7"></i>140</div>
-                        <div class="title">
-                            <h4>Dr. Julia Holmes<em>Pediatrician - Cardiologist</em></h4>
-                        </div><img src="http://via.placeholder.com/350x500.jpg" alt="">
-                    </a>
-                </div>
+                    <div class="item">
+                        <a asp-controller="Category" asp-action="Detail" asp-route-Id="@doctors.Id">
+                            <div class="views"><i class="icon-eye-7"></i>@doctors.View</div>
+                            <div class="title">
+                                <h4>Dr. @doctors.Surname @doctors.Name<em>@doctors.Category.Name</em></h4>
+                            </div><img src="~/assets/img/doctor/@doctors.ImageUrl" alt="">
+                        </a>
+                    </div>
                 }
             </div>
             <!-- /carousel -->

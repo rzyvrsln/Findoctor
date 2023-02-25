@@ -8,6 +8,7 @@ namespace FindoctorService.Services
         Task<ICollection<Patient>> GetAllPatientAsync();
         Task AddPatientAsync(CreatePatientVM patientVM);
         Task DeletePatientAsync(int? id);
+        Task RemoveNullTables();
         Task<UpdatePatientVM> UpdatePatientAsync(int? id);
         Task UpdatePatientPostAsync(int? id, UpdatePatientVM patientVM);
     }

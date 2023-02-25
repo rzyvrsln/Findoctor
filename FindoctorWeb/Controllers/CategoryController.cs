@@ -75,13 +75,12 @@ namespace FindoctorWeb.Controllers
         public async Task<IActionResult> Detail(int? id, CombinedViewModel model)
         {
             var doctor = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);
-            //if (!(model.createPatientVM.Time.Hour < doctor.StopWorkTime.Hour)) return RedirectToAction(nameof(Detail));
-            //if (!(doctor.StartWorkTime.Hour < model.createPatientVM.Time.Hour)) return RedirectToAction(nameof(Detail));
             Patient patient = new Patient
             {
                 Time = model.createPatientVM.Time,
                 Paymant = doctor.Paymant
             };
+
             await appDbContext.Patients.AddAsync(patient);
             await appDbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Paymant), new RouteValueDictionary(new { Controller = "Category", Action = "Paymant", patientId = patient.Id }));
@@ -98,6 +97,7 @@ namespace FindoctorWeb.Controllers
             {
                 patients = patient
             };
+
 
             return View(model);
         }
@@ -131,6 +131,7 @@ namespace FindoctorWeb.Controllers
                     return NotFound();
                 }
             }
+            await patientService.RemoveNullTables();
             await patientService.AddPatientAsync(model.createPatientVM);
             return RedirectToAction(nameof(SuccessComfirm));
         }
