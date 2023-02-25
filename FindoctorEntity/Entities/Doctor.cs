@@ -16,6 +16,7 @@ namespace FindoctorEntity.Entities
         public DateTime StopWorkTime { get; set; }
         public float Paymant { get; set; }
         public bool IsActive { get; set; } = true;
+        public int View { get; set; }
 
         public int ClinicId { get; set; }
         public Clinic Clinic { get; set; }

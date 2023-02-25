@@ -35,10 +35,38 @@ namespace FindoctorWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            var doctor = await appDbContext.Doctors.Include(d => d.Category).Include(d => d.Clinic).FirstOrDefaultAsync(d => d.Id == id);
+            var doctorView = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);
+            var viewCount = doctorView.View++;
+            Doctor doctorV = new Doctor
+            {
+                Name = doctorView.Name,
+                Surname = doctorView.Surname,
+                Phone = doctorView.Phone,
+                Email = doctorView.Email,
+                Gender = doctorView.Gender,
+                ImageUrl = doctorView.ImageUrl,
+                StartWorkTime = doctorView.StartWorkTime,
+                StopWorkTime = doctorView.StopWorkTime,
+                ClinicId = doctorView.ClinicId,
+                CategoryId = doctorView.CategoryId,
+                CreatedAt = doctorView.CreatedAt,
+                UpdatedAt = doctorView.UpdatedAt,
+                IsDeleted = doctorView.IsDeleted,
+                UserId = doctorView.UserId,
+                About = doctorView.About,
+                Paymant = doctorView.Paymant,
+                IsActive = doctorView.IsActive,
+                View = viewCount
+            };
+            appDbContext.Doctors.Update(doctorView);
+            await appDbContext.SaveChangesAsync();
+
+            var doctor = await appDbContext.Doctors.Include(d => d.DoctorPatients).Include(d => d.Category).Include(d => d.Clinic).FirstOrDefaultAsync(d => d.Id == id);
+            var doctorPatient = await appDbContext.DoctorPatients.Include(dp=>dp.Patient).FirstOrDefaultAsync(dp=>dp.DoctorId == doctor.Id);
             CombinedViewModel model = new CombinedViewModel
             {
-                doctors = doctor
+                doctors = doctor,
+                doctorPatient = doctorPatient
             };
             return View(model);
         }

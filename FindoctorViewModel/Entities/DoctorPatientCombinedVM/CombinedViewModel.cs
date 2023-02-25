@@ -11,7 +11,8 @@ namespace FindoctorViewModel.Entities.DoctorPatientCombinedVM
     public class CombinedViewModel
     {
         public Doctor doctors { get; set; }
-        public Patient patients { get;set; } 
+        public Patient patients { get; set; }
+        public DoctorPatient doctorPatient { get;set; }
         public CreatePatientVM createPatientVM { get; set; }
         public UpdatePatientVM updatePatientVM { get; set; }
     }
