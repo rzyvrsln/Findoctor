@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-@model ICollection<Patient>
+@model ICollection<DoctorPatient>
 
 <div class="content-wrapper container">
     <div class="container-fluid">
@@ -34,17 +34,16 @@
                 <tbody>
                     @foreach (var dp in Model)
                     {
-                        
                         <tr>
                             <th scope="row">1</th>
-                            <td>@dp.Name</td>
-                            <td>@dp.Surname</td>
-                            <td>@dp.Email</td>
-                            <td>@dp.Phone</td>
-                            <td>@dp.Gender</td>
+                            <td>@dp.Patient.Name</td>
+                            <td>@dp.Patient.Surname</td>
+                            <td>@dp.Patient.Email</td>
+                            <td>@dp.Patient.Phone</td>
+                            <td>@dp.Patient.Gender</td>
                             <td>
-                                <a asp-controller="Patient" asp-action="Comfirm" asp-route-Id="@dp.Id" class="btn btn-success">Qəbul et</a>
-                                <a asp-controller="Patient" asp-action="Delete" asp-route-id="@dp.Id" class="btn btn-danger">Sil</a>
+                                <a asp-controller="Patient" asp-action="Comfirm" asp-route-Id="@dp.Patient.Id" class="btn btn-success">Qəbul et</a>
+                                <a asp-controller="Patient" asp-action="Delete" asp-route-id="@dp.Patient.Id" class="btn btn-danger">Sil</a>
                             </td>
                         </tr>
                     }

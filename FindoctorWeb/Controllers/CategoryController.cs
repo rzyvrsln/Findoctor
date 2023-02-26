@@ -110,7 +110,6 @@ namespace FindoctorWeb.Controllers
                 patients = patient
             };
 
-
             return View(model);
         }
 
