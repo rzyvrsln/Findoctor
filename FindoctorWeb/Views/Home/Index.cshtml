@@ -20,16 +20,12 @@
                     </div>
                     <ul>
                         <li>
-                            <input type="radio" id="all" name="radio_search" value="all" checked>
-                            <label for="all">All</label>
-                        </li>
-                        <li>
                             <input type="radio" id="doctor" name="radio_search" value="doctor">
-                            <label for="doctor">Doctor</label>
+                            <label for="doctor"><a asp-controller="Category" asp-action="AllDoctors" style="color:white">Həkimlər</a></label>
                         </li>
                         <li>
                             <input type="radio" id="clinic" name="radio_search" value="clinic">
-                            <label for="clinic">Clinic</label>
+                            <label for="clinic"><a asp-controller="Category" asp-action="AllClinics" style="color:white">Klinikalar</a></label>
                         </li>
                     </ul>
                 </div>
@@ -66,7 +62,7 @@
             </div>
         </div>
         <!-- End row -->
-        <p class="text-center"><a href="list.html" class="btn_1 medium">Find Doctor</a></p>
+        <p class="text-center"><a asp-controller="Category" asp-action="AllDoctors" class="btn_1 medium">Həkim axtarın</a></p>
     </div>
     <!-- End container -->
 
@@ -74,7 +70,7 @@
         <div class="container margin_120_95">
             <div class="main_title">
                 <h2>Ən çox baxılan həkimlər</h2>
-                <p>Həkimlərin izlənmə sayına görə ən üst səviyyədə olan həkimlər.</p>
+                <p>İzlənmə sayına görə ən üst səviyyədə olan həkimlər.</p>
             </div>
             <div id="reccomended" class="owl-carousel owl-theme">
                 @foreach (var doctors in (List<Doctor>)ViewBag.Doctors)@*GetRange(0,5)*@

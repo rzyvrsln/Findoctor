@@ -33,6 +33,28 @@ namespace FindoctorWeb.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> AllDoctors()
+        {
+            var doctors = await appDbContext.Doctors.Include(d => d.Category).ToListAsync();
+            return View(doctors);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AllClinics()
+        {
+            var clinics = await appDbContext.Clinics.Include(d => d.Category).ToListAsync();
+            return View(clinics);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ClinicDetail(int? id)
+        {
+            var clinic = await appDbContext.Clinics.FirstOrDefaultAsync(c => c.Id == id);
+            ViewBag.DoctorsCount = await appDbContext.Doctors.Where(d => d.ClinicId == clinic.Id).CountAsync();
+            return View(clinic);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
             var doctorView = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);

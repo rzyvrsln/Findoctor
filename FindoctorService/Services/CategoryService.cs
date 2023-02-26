@@ -2,7 +2,6 @@
 using FindoctorData.UnitOfWorks;
 using FindoctorEntity.Entities;
 using FindoctorViewModel.Entities.CategoryVM;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 

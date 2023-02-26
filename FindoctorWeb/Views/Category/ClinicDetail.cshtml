@@ -1,0 +1,86 @@
+﻿@using FindoctorEntity.Entities
+
+@{
+    ViewData["Title"] = "ClinicDetail";
+}
+
+@model Clinic
+
+<main>
+    <div id="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li>Page active</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /breadcrumb -->
+
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <nav id="secondary_nav">
+                    <div class="container">
+                        <ul class="clearfix">
+                            <li><a href="#section_1" class="active">Ümumi məlumatlar</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="section_1">
+                    <div class="box_general_3">
+                        <div class="profile">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-4">
+                                    <figure>
+                                        <img src="~/assets/img/clinic/clinic.png" alt="" class="img-fluid">
+                                    </figure>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <h1>@Model.Name</h1>
+                                    <span class="rating">
+                                        <i class="icon_star voted"></i>
+                                        <i class="icon_star voted"></i>
+                                        <i class="icon_star voted"></i>
+                                        <i class="icon_star voted"></i>
+                                        <i class="icon_star"></i>
+                                        <small>(145)</small>
+                                    </span>
+                                    <ul class="statistic">
+                                        <li>@ViewBag.DoctorsCount həkim</li>
+                                    </ul>
+                                    <ul class="contacts">
+                                        <li>
+                                            <h6 style="display:inline;">Ünvan</h6> -@Model.Location
+                                        </li>
+                                        <li>
+                                            <h6 style="display:inline;">İş saatı</h6> @Model.StartWorkTime.Hour.@Model.StartWorkTime.Minute - @Model.StoptWorkTime.Hour.@Model.StoptWorkTime.Minute
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- /profile -->
+
+                        <div class="indent_title_in">
+                            <i class="pe-7s-news-paper"></i>
+                            <h3>Klinika</h3>
+                        </div>
+                        <div class="wrapper_indent">
+                            <p>@Model.Description</p>
+                        </div>
+
+                    </div>
+                    <!-- /section_1 -->
+                </div>
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
