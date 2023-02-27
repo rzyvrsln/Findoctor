@@ -8,9 +8,9 @@
 <main>
     <div class="hero_home version_2">
         <div class="content">
-            <h3>Find a Doctor!</h3>
+            <h3>Həkim axtarın!</h3>
             <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+                İstətdiyiniz həkimi axtarış edərək tapa bilərsiniz. Həkimlər və klinikalar haqqında məlumatları öyrənə bilərsiniz.
             </p>
             <form method="post" action="list.html">
                 <div id="custom-search-input">
@@ -21,11 +21,11 @@
                     <ul>
                         <li>
                             <input type="radio" id="doctor" name="radio_search" value="doctor">
-                            <label for="doctor"><a asp-controller="Category" asp-action="AllDoctors" style="color:white">Həkimlər</a></label>
+                            <label for="doctor"><a asp-controller="SearchBar" asp-action="Search" style="color:white">Həkimlər</a></label>
                         </li>
                         <li>
                             <input type="radio" id="clinic" name="radio_search" value="clinic">
-                            <label for="clinic"><a asp-controller="Category" asp-action="AllClinics" style="color:white">Klinikalar</a></label>
+                            <label for="clinic"><a asp-controller="SearchBar" asp-action="SearchClinic" style="color:white">Klinikalar</a></label>
                         </li>
                     </ul>
                 </div>

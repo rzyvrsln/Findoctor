@@ -1,7 +1,6 @@
 ﻿@using FindoctorEntity.Entities
-
 @{
-    ViewData["Title"] = "AllClinics";
+    ViewData["Title"] = "SearchClinic";
 }
 
 @model ICollection<Clinic>
@@ -12,11 +11,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>140 dan <strong> 10</strong></h4>
+                        <h4>140 dan <strong>10</strong></h4>
                     </div>
                     <div class="col-md-6">
                         <div class="search_bar_list">
-                            <input name="SearchClinic" type="text" class="form-control" placeholder="Klinika...">
+                            <input name="Search" type="text" class="form-control" placeholder="Klinika...">
                             <input type="submit" value="Axtar">
                         </div>
                     </div>
@@ -27,7 +26,37 @@
         </div>
     </form>
     <!-- /results -->
-    @await Component.InvokeAsync("DoctorsOrClinics")
+    <div class="filters_listing">
+        <div class="container">
+            <ul class="clearfix">
+                <li>
+                    <h6>Type</h6>
+                    <div class="switch-field">
+                        <ul>
+                            <li>
+                                <input type="radio" id="doctor" name="radio_search" value="doctor">
+                                <label for="doctor"><a asp-controller="Category" asp-action="AllDoctors">Həkimlər</a></label>
+                            </li>
+                            <li>
+                                <input type="radio" id="clinic" name="radio_search" value="clinic">
+                                <label for="clinic"><a asp-controller="Category" asp-action="AllClinics">Klinikalar</a></label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                @*<li>
+                <h6>Sort by</h6>
+                <select name="orderby" class="selectbox">
+                <option value="Closest">Closest</option>
+                <option value="Best rated">Best rated</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                </select>
+                </li>*@
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
     <!-- /filters -->
 
     <div class="container margin_60_35">

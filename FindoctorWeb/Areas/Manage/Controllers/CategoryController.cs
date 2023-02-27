@@ -2,7 +2,6 @@
 using FindoctorService.Extensions;
 using FindoctorService.Services;
 using FindoctorViewModel.Entities.CategoryVM;
-using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;

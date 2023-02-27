@@ -274,10 +274,6 @@ C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Microsoft.AspNet
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FluentValidation.dll
-C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
-C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
-C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\obj\Debug\net6.0\FindoctorWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FindoctorViewModel.dll
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\FindoctorViewModel.pdb
 C:\Users\Ruslan\Desktop\Findoctor\FindoctorWeb\bin\Debug\net6.0\Stripe.net.dll

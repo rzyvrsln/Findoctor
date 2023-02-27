@@ -1,15 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FindoctorData\FindoctorData.csproj" />
-    <ProjectReference Include="..\FindoctorEntity\FindoctorEntity.csproj" />
-    <ProjectReference Include="..\FindoctorViewModel\FindoctorViewModel.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<ProjectReference Include="..\FindoctorData\FindoctorData.csproj" />
+		<ProjectReference Include="..\FindoctorEntity\FindoctorEntity.csproj" />
+		<ProjectReference Include="..\FindoctorViewModel\FindoctorViewModel.csproj" />
+	</ItemGroup>
 
 </Project>

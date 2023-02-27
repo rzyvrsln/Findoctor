@@ -147,6 +147,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2xpbmljRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/Category/Components/DoctorsOrClinics/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ29tcG9uZW50c1xEb2N0b3JzT3JDbGluaWNzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -169,6 +173,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/SearchBar/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoQmFyXFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/SearchBar/SearchClinic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoQmFyXFNlYXJjaENsaW5pYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Views/Shared/Error.cshtml]
