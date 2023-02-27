@@ -37,9 +37,9 @@ namespace FindoctorWeb.Controllers
                 return View(await dbContext.Clinics.Include(d => d.Category).ToListAsync());
             }
 
-            var doctors = await dbContext.Clinics.Where(d => d.Name.Contains(search) || d.Description.Contains(search) || d.Location.Contains(search)).Include(d => d.Category).ToListAsync();
+            var clinics = await dbContext.Clinics.Where(d => d.Name.Contains(search) || d.Description.Contains(search) || d.Location.Contains(search)).Include(d => d.Category).ToListAsync();
 
-            if (doctors.Any()) return View(doctors);
+            if (clinics.Any()) return View(clinics);
 
             else return View(await dbContext.Clinics.Include(d => d.Category).ToListAsync());
 

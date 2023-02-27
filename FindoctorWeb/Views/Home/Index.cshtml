@@ -10,22 +10,22 @@
         <div class="content">
             <h3>Həkim axtarın!</h3>
             <p>
-                İstətdiyiniz həkimi axtarış edərək tapa bilərsiniz. Həkimlər və klinikalar haqqında məlumatları öyrənə bilərsiniz.
+                İstətdiyiniz həkimi axtarış edərək tapa bilərsiniz. Həkimlər haqqında məlumatları öyrənə bilərsiniz.
             </p>
-            <form method="post" action="list.html">
+            <form asp-controller="SearchBar" asp-action="Search">
                 <div id="custom-search-input">
                     <div class="input-group">
-                        <input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
-                        <input type="submit" class="btn_search" value="Search">
+                        <input name="Search" type="text" class="search-query" placeholder="Həkim, Klinika ....">
+                        <input type="submit" class="btn_search" value="Axtar">
                     </div>
                     <ul>
                         <li>
                             <input type="radio" id="doctor" name="radio_search" value="doctor">
-                            <label for="doctor"><a asp-controller="SearchBar" asp-action="Search" style="color:white">Həkimlər</a></label>
+                            <label for="doctor"><a asp-controller="SearchBar" asp-action="Search" style="color:white">Həkim axtar</a></label>
                         </li>
                         <li>
                             <input type="radio" id="clinic" name="radio_search" value="clinic">
-                            <label for="clinic"><a asp-controller="SearchBar" asp-action="SearchClinic" style="color:white">Klinikalar</a></label>
+                            <label for="clinic"><a asp-controller="SearchBar" asp-action="SearchClinic" style="color:white">Klinika axtar</a></label>
                         </li>
                     </ul>
                 </div>
