@@ -91,8 +91,6 @@ namespace FindoctorWeb.Controllers
                 doctorPatient = doctorPatient
             };
 
-            
-
             return View(model);
         }
 

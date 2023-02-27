@@ -102,10 +102,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @*<td>@Model.doctorPatient.Patient.Name @Model.doctorPatient.Patient.Surname</td>
-                                            <td>@Model.doctorPatient.Patient.Paymant</td>*@
-                                        </tr>
+                                        @if (Model.doctorPatient.Patient.Name != null)
+                                        {
+                                            <tr>
+                                                <td>@Model.doctorPatient.Patient.Name @Model.doctorPatient.Patient.Surname</td>
+                                                <td>@Model.doctorPatient.Patient.Paymant</td>
+                                            </tr>
+                                        }
 
                                     </tbody>
                                 </table>
@@ -120,68 +123,6 @@
                 <div id="section_2">
                     <div class="box_general_3">
                         <div class="reviews-container">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div id="review_summary">
-                                        <strong>4.7</strong>
-                                        <div class="rating">
-                                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                        </div>
-                                        <small>Based on 4 reviews</small>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="row">
-                                        <div class="col-lg-10 col-9">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-3"><small><strong>5 stars</strong></small></div>
-                                    </div>
-                                    <!-- /row -->
-                                    <div class="row">
-                                        <div class="col-lg-10 col-9">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-3"><small><strong>4 stars</strong></small></div>
-                                    </div>
-                                    <!-- /row -->
-                                    <div class="row">
-                                        <div class="col-lg-10 col-9">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-3"><small><strong>3 stars</strong></small></div>
-                                    </div>
-                                    <!-- /row -->
-                                    <div class="row">
-                                        <div class="col-lg-10 col-9">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-3"><small><strong>2 stars</strong></small></div>
-                                    </div>
-                                    <!-- /row -->
-                                    <div class="row">
-                                        <div class="col-lg-10 col-9">
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-3"><small><strong>1 stars</strong></small></div>
-                                    </div>
-                                    <!-- /row -->
-                                </div>
-                            </div>
-                            <!-- /row -->
-
-                            <hr>
-
                             <div class="review-box clearfix">
                                 <figure class="rev-thumb">
                                     <img src="http://via.placeholder.com/150x150.jpg" alt="">
@@ -200,47 +141,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- End review-box -->
-
-                            <div class="review-box clearfix">
-                                <figure class="rev-thumb">
-                                    <img src="http://via.placeholder.com/150x150.jpg" alt="">
-                                </figure>
-                                <div class="rev-content">
-                                    <div class="rating">
-                                        <i class="icon-star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                    </div>
-                                    <div class="rev-info">
-                                        Ahsan – April 01, 2016
-                                    </div>
-                                    <div class="rev-text">
-                                        <p>
-                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End review-box -->
-
-                            <div class="review-box clearfix">
-                                <figure class="rev-thumb">
-                                    <img src="http://via.placeholder.com/150x150.jpg" alt="">
-                                </figure>
-                                <div class="rev-content">
-                                    <div class="rating">
-                                        <i class="icon-star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                    </div>
-                                    <div class="rev-info">
-                                        Sara – March 31, 2016
-                                    </div>
-                                    <div class="rev-text">
-                                        <p>
-                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End review-box -->
                         </div>
                         <!-- End review-container -->
                         <hr>
@@ -260,27 +160,27 @@
                             <h3>Müraciət üçün</h3>
                             <small>Şənbə və bazar günləri işləmirik.</small>
                         </div>
-                        @*@if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                        @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
                         {
-                        <div class="row">
-                        <div class="col-12">
-                        <div class="form-group">
-                        <p>Bu gün işləmirik.</p>
-                        </div>
-                        </div>
-                        </div>
-                        }*@
-                        @* else
-                        {*@
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input asp-for="@Model.createPatientVM.Time" class="form-control">
-                                    <span asp-validation-for="@Model.createPatientVM.Time" class="text-danger"></span>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <p>Bu gün işləmirik.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        @*}*@
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input asp-for="@Model.createPatientVM.Time" class="form-control">
+                                        <span asp-validation-for="@Model.createPatientVM.Time" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                         <!-- /row -->
                         <ul class="treatments clearfix">
                             <li>
@@ -294,14 +194,14 @@
                         {
                             @if (User.IsInRole("User"))
                             {
-                                @*@if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
-                        {
-                        <a class="btn_1 full-width">İş günü deyil</a>
-                        }*@
-                                @*else
-                        {*@
-                                <button type="submit" class="btn_1 full-width">Müraciət edin</button>
-                                @*}*@
+                                @if (time.DayOfWeek == DayOfWeek.Saturday || time.DayOfWeek == DayOfWeek.Sunday)
+                                {
+                                    <a class="btn_1 full-width">İş günü deyil</a>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn_1 full-width">Müraciət edin</button>
+                                }
                             }
                         }
                         else
