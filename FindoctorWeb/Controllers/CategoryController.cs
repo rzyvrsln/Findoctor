@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
 using Stripe.FinancialConnections;
+using System.Security.Claims;
 
 namespace FindoctorWeb.Controllers
 {
@@ -91,6 +92,8 @@ namespace FindoctorWeb.Controllers
                 doctorPatient = doctorPatient
             };
 
+            ViewBag.Reviews = await appDbContext.Reviews.Where(r => r.DoctorId == id).Include(r => r.doctor).ToListAsync();
+
             return View(model);
         }
 
@@ -169,6 +172,6 @@ namespace FindoctorWeb.Controllers
 
         [HttpGet]
         public async Task<IActionResult> SuccessComfirm() => View();
-        
+
     }
 }

@@ -25,5 +25,6 @@ namespace FindoctorEntity.Entities
         public Category Category { get; set; }
 
         public ICollection<DoctorPatient>? DoctorPatients { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
     }
 }

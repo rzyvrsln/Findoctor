@@ -62,7 +62,7 @@
                     <div style="display:inline-block;" class="strip_list fadeIn col-lg-6">
                         <a href="#0" class="wish_bt"></a>
                         <figure>
-                            <a href="detail-page.html"><img src="~/assets/img/doctor/@doctors.ImageUrl" alt=""></a>
+                            <a asp-controller="Category" asp-action="Detail" asp-route-Id="@doctors.Id"><img src="~/assets/img/doctor/@doctors.ImageUrl" alt=""></a>
                         </figure>
                         <small>@doctors.Category.Name</small>
                         <h3>Dr. @doctors.Name</h3>

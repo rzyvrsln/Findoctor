@@ -49,7 +49,7 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Clinic", b =>
@@ -94,7 +94,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Clinics", (string)null);
+                    b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
@@ -173,7 +173,7 @@ namespace FindoctorData.Migrations
 
                     b.HasIndex("ClinicId");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.DoctorPatient", b =>
@@ -181,14 +181,14 @@ namespace FindoctorData.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientId")
+                    b.Property<int?>("PatientId")
                         .HasColumnType("int");
 
                     b.HasKey("DoctorId", "PatientId");
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("DoctorPatients", (string)null);
+                    b.ToTable("DoctorPatients");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>
@@ -234,7 +234,49 @@ namespace FindoctorData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Patients", (string)null);
+                    b.ToTable("Patients");
+                });
+
+            modelBuilder.Entity("FindoctorEntity.Entities.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Accept")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -508,6 +550,17 @@ namespace FindoctorData.Migrations
                     b.Navigation("Patient");
                 });
 
+            modelBuilder.Entity("FindoctorEntity.Entities.Review", b =>
+                {
+                    b.HasOne("FindoctorEntity.Entities.Doctor", "doctor")
+                        .WithMany("Reviews")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("doctor");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -574,6 +627,8 @@ namespace FindoctorData.Migrations
             modelBuilder.Entity("FindoctorEntity.Entities.Doctor", b =>
                 {
                     b.Navigation("DoctorPatients");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("FindoctorEntity.Entities.Patient", b =>

@@ -117,6 +117,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\assets\img\category\" />
     <Folder Include="wwwroot\assets\img\doctor\" />
+    <Folder Include="wwwroot\assets\img\reviewForUser\" />
     <Folder Include="wwwroot\assets\img\patient\" />
   </ItemGroup>
 

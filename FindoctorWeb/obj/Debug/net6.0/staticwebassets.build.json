@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AXdyQUX5REeocmb1F9BJ5F9dNIcFG/5Kwx71Uvbfz0c=",
+  "Hash": "1tWMOSiLP1pWqcQd2rCq9zsJWN/KJfNhZOjn3MtPK3s=",
   "Source": "FindoctorWeb",
   "BasePath": "_content/FindoctorWeb",
   "Mode": "Default",
@@ -2480,6 +2480,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\pins\\Doctors.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\reviewForUser\\7894d52e-5762-4bb7-9797-6855e96208baWhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "SourceId": "FindoctorWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\",
+      "BasePath": "_content/FindoctorWeb",
+      "RelativePath": "assets/img/reviewForUser/7894d52e-5762-4bb7-9797-6855e96208baWhatsApp Image 2022-12-25 at 22.55.42.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\reviewForUser\\7894d52e-5762-4bb7-9797-6855e96208baWhatsApp Image 2022-12-25 at 22.55.42.jpeg"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\Findoctor\\FindoctorWeb\\wwwroot\\assets\\img\\search.svg",
