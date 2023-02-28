@@ -59,7 +59,7 @@ namespace FindoctorWeb.Controllers
                 await _appDbContext.Reviews.AddAsync(review);
                 await _appDbContext.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Review), "Review");
+                return RedirectToAction("Review", "Detail");
 
             }
             return View();
