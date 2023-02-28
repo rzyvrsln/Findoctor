@@ -94,7 +94,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if (Model.doctorPatient.Patient.Name != null)
+                                        @if (Model.doctorPatient is not null)
                                         {
                                             <tr>
                                                 <td>@Model.doctorPatient.Patient.Name @Model.doctorPatient.Patient.Surname</td>

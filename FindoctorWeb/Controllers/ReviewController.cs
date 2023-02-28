@@ -59,7 +59,7 @@ namespace FindoctorWeb.Controllers
                 await _appDbContext.Reviews.AddAsync(review);
                 await _appDbContext.SaveChangesAsync();
 
-                return RedirectToAction("Review", "Detail");
+                return RedirectToAction("Detail", new RouteValueDictionary(new { Controller = "Category", Action = "Detail", id = doctor.Id }));
 
             }
             return View();

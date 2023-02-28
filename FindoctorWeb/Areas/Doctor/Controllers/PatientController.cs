@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace FindoctorWeb.Areas.Doctor.Controllers
 {
@@ -24,8 +25,11 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var doctor = appDbContext.Doctors.ToList();
-            var patients = await appDbContext.DoctorPatients.Where(dp => dp.Patient.Name != null).Include(dp => dp.Patient).ToListAsync();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var doctor = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
+
+            if (doctor is null) return View();
+            var patients = await appDbContext.DoctorPatients.Where(dp => dp.Patient.Name != null || dp.DoctorId == doctor.Id).Include(dp => dp.Patient).ToListAsync();
             return View(patients);
         }
 

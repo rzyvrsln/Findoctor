@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRG9jdG9yXFZpZXdzXFByb2ZpbGVcVmlld1Byb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Areas/Doctor/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRG9jdG9yXFZpZXdzXFJldmlld1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ruslan/Desktop/Findoctor/FindoctorWeb/Areas/Doctor/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRG9jdG9yXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

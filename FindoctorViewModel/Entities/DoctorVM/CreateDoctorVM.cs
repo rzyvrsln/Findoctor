@@ -19,9 +19,9 @@ namespace FindoctorViewModel.Entities.DoctorVM
         public string Gender { get; set; }
         [Required(ErrorMessage = "Şəkil boş qala bilməz.")]
         public IFormFile Image { get; set; }
-        [DataType(DataType.Time, ErrorMessage = "Saat daxil edin.")]
+        [DataType(DataType.Time), Required(ErrorMessage = "Saat boş olmamalıdır.")]
         public DateTime StartWorkTime { get; set; }
-        [DataType(DataType.Time,ErrorMessage = "Saat daxil edin.")]
+        [DataType(DataType.Time), Required(ErrorMessage = "Saat boş olmamalıdır.")]
         public DateTime StopWorkTime { get; set; }
         [Required(ErrorMessage = "Qiymət daxil edin.")]
         public float Paymant { get; set; }
