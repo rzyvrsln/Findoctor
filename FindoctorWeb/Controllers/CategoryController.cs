@@ -140,7 +140,6 @@ namespace FindoctorWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> Charge(string stripeEmail, string stripeToken, CombinedViewModel model)
         {
-
             try
             {
                 var options = new ChargeCreateOptions
