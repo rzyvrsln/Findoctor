@@ -29,7 +29,7 @@ namespace FindoctorWeb.Areas.Doctor.Controllers
             var doctor = await appDbContext.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
 
             if (doctor is null) return View();
-            var patients = await appDbContext.DoctorPatients.Where(dp => dp.Patient.Name != null || dp.DoctorId == doctor.Id).Include(dp => dp.Patient).ToListAsync();
+            var patients = await appDbContext.DoctorPatients.Include(dp => dp.Patient).ToListAsync();
             return View(patients);
         }
 
